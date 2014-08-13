@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="window-1251"?>
+<skin>
+  <screen width="1000" height="700" />
+  <resources>
+   <texture name="res" file="furq_texture3.png" />
+   <texture name="res3" file="witch_logo.png" />
+   <texture name="res2" file="icon_enykey.png" />
+   <font name="btnfont" file="bos16.fnt" />
+   <buttonframe name="tbuttons" tex="res" font="btnfont" texx="566" texy="49" width="45" height="40" leftw="17" midw="8" cnormal="FFBBBBBB" cfocused="FFFFFFFF" />
+  </resources>
+  <splash>
+   <logo tex="res3" tx="0" ty="0" width="720" height="540" />  
+  </splash>
+  <main>
+   <textpane bframe="tbuttons" left="20" top="55" width="760" height="525" />
+  <icons>
+  <timer  tex="res2" tx="0" ty="0" width="47" height="45" />
+  <anykey tex="res2" tx="0" ty="0" width="47" height="45" />
+  <scroll tex="res2" tx="0" ty="0" width="47" height="45" />
+  </icons>
+   <menus>
+    <sysbutton tex="res" tx="0" ty="0" width="106" height="46" posx="0" posy="0"/>
+    <sysmenu posx="20" posy="42" datum="lt"/>
+    <invbutton tex="res" tx="424" ty="0" width="130" height="46" posx="868" posy="0"/>
+    <invmenu posx="980" posy="42" datum="rt"/>
+   </menus>
+   <decorations>
+    <image tex="res" tx="0" ty="169" width="763" height="14" posx="105" posy="29"/>
+   </decorations>
+  </main>
+</skin>

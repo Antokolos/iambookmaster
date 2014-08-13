@@ -1,0 +1,1722 @@
+:start
+hide_phantoms=0&fp_prec=0
+p Герой и Дракон#/$
+p Глеб Гадяцкий#/$
+p Книга была создана с помощью редактора Я - Мастер Книг (htt
+p p://www.iambookmaster.com)#/$
+btn A0,Подробнее
+
+end
+:common
+end
+:A0
+p Пробная книга-игра, была написана для демонстрации возможно
+p стей редактора книг-игр "Я - Мастер Книг" и интерактивного пл
+p еера.#/$
+pln 
+proc B0
+btn C0,Начало игры
+
+end
+:D0
+if E0=1 then goto F0
+if E0=2 then goto G0
+if E0=3 then goto H0
+if E0=4 then goto I0
+goto J0
+:K0
+if E0=6 then goto L0
+if E0=7 then goto M0
+if E0=8 then goto N0
+if E0=9 then goto O0
+if E0=10 then goto P0
+goto Q0
+:R0
+if E0<6 then goto D0
+goto K0
+:S0
+if E0=12 then goto T0
+if E0=13 then goto U0
+if E0=14 then goto V0
+if E0=15 then goto A1
+if E0=16 then goto B1
+goto C1
+:D1
+if E0=18 then goto E1
+if E0=19 then goto F1
+if E0=20 then goto G1
+if E0=21 then goto H1
+if E0=22 then goto I1
+goto J1
+:K1
+if E0<18 then goto S0
+goto D1
+:L1
+if E0<12 then goto R0
+goto K1
+:M1
+if E0=24 then goto N1
+if E0=25 then goto O1
+if E0=26 then goto P1
+if E0=27 then goto Q1
+goto R1
+:S1
+if E0=29 then goto T1
+if E0=30 then goto U1
+if E0=31 then goto C0
+if E0=32 then goto V1
+if E0=33 then goto A2
+goto B2
+:C2
+if E0<29 then goto M1
+goto S1
+:D2
+if E0=35 then goto E2
+if E0=36 then goto F2
+if E0=37 then goto G2
+if E0=38 then goto H2
+if E0=39 then goto I2
+goto J2
+:K2
+if E0=41 then goto L2
+if E0=42 then goto M2
+if E0=43 then goto N2
+if E0=44 then goto O2
+if E0=45 then goto P2
+goto Q2
+:R2
+if E0<41 then goto D2
+goto K2
+:S2
+if E0<35 then goto C2
+goto R2
+:T2
+if E0<24 then goto L1
+goto S2
+:S3
+if T3=7 then p Гоблин#$
+if T3=8 then p Тролль#$
+if T3=9 then p Дракон#$
+if T3=10 then p Болотный дух#$
+end
+:Q3
+pln 
+if R3=0 and I3>0 and V2=0 and A3>=1 and P3=0 then btn U2,Бросить огн. песок
+if R3=0 and I3>0 and V2=0 and G4>=1 and I4=0 then btn F4,Выпить целебную настойку
+if R3=0 and I3>0 and V2=0 and M4>0 and H4>=0 and O4=0 then btn L4,Метнуть кинжал
+end
+:O3
+if P3=1 then P3=0
+if B4=1 then B4=0
+if E4=1 then E4=0
+if I4=1 then I4=0
+if K4=1 then K4=0
+if O4=1 then O4=0
+end
+:U2
+V2=1
+A3=A3-1
+B3=0
+proc C3
+if F3=0 then G3=H3-B3&if H3<=0 then H3=0&I3=I3-1&proc J3
+if F3=1 then K3=L3-B3&if L3<=0 then L3=0&I3=I3-1&proc J3
+if F3=2 then M3=N3-B3&if N3<=0 then N3=0&I3=I3-1&proc J3
+goto T2
+end
+:U3
+V2=1
+V3=V3-5
+B3=2
+&A4=A4+B3
+goto T2
+end
+:C4
+V2=1
+V3=V3-10
+B3=2
+&D4=D4+B3
+goto T2
+end
+:F4
+V2=1
+G4=G4-1
+B3=4
+&H4=H4+B3
+goto T2
+end
+:J4
+V2=1
+V3=V3-5
+B3=1
+&G4=G4+B3
+goto T2
+end
+:L4
+V2=1
+H4=H4-0
+if I3>0 then M4=M4-1
+B3=0
+proc N4
+if F3=0 then G3=H3-B3&if H3<=0 then H3=0&I3=I3-1&proc J3
+if F3=1 then K3=L3-B3&if L3<=0 then L3=0&I3=I3-1&proc J3
+if F3=2 then M3=N3-B3&if N3<=0 then N3=0&I3=I3-1&proc J3
+goto T2
+end
+:V4
+p #/$Твои параметры: #$
+if H4<>0 then p Хиты:#H4$/#A4$#$
+if D4<>0 then p Сила удара:#D4$#$
+if G5<>0 then p Сила воли:#G5$#$
+if A3<>0 then p Порций огн. песка:#A3$#$
+if H5<>0 then p Удача:#H5$/#I5$#$
+if V3<>0 then p Монеты:#V3$#$
+if G4<>0 then p Порций целебной настойки:#G4$#$
+if I3>0 and J5>0 then  p Кинжалы:#J523$#$
+if I3=0 and K5<>0 then p Кинжалы:#K5$#$
+end
+:L5
+proc Q4
+if T3>0 then M5=M5+1&p #/$#M5$#$&btn N5,<#M5$>
+if T3>0 then proc S3
+end
+:O5
+proc Q4
+if T3>0 then F3=0&M5=I3
+end
+:P5
+proc Q4
+if T3=0 then I3=I3-1
+if T3=0 then proc J3
+end
+:Q5
+proc S4
+if T3>0 then M5=M5+1&p #/$#M5$#$&btn R5,<#M5$>
+if T3>0 then proc S3
+end
+:S5
+proc S4
+if T3>0 then F3=1&M5=I3
+end
+:T5
+proc S4
+if T3=0 then I3=I3-1
+if T3=0 then proc J3
+end
+:U5
+proc U4
+if T3>0 then M5=M5+1&p #/$#M5$#$&btn V5,<#M5$>
+if T3>0 then proc S3
+end
+:A6
+proc U4
+if T3>0 then F3=2&M5=I3
+end
+:B6
+proc U4
+if T3=0 then I3=I3-1
+if T3=0 then proc J3
+end
+:P4
+if H3<>0 then p Хиты #H3$#$
+if H3<=0 then H3=0&T3=0
+if A5<>0 then p Сила удара #A5$#$
+if D5<>0 then p Сила воли #D5$#$
+end
+:Q4
+if H3<=0 then T3=0
+
+end
+:C6
+if I3>1 and F3=0 then p ><#$
+end
+:R4
+if L3<>0 then p Хиты #L3$#$
+if L3<=0 then L3=0&T3=0
+if B5<>0 then p Сила удара #B5$#$
+if E5<>0 then p Сила воли #E5$#$
+end
+:S4
+if L3<=0 then T3=0
+
+end
+:D6
+if I3>1 and F3=1 then p ><#$
+end
+:T4
+if N3<>0 then p Хиты #N3$#$
+if N3<=0 then N3=0&T3=0
+if C5<>0 then p Сила удара #C5$#$
+if F5<>0 then p Сила воли #F5$#$
+end
+:U4
+if N3<=0 then T3=0
+
+end
+:E6
+if I3>1 and F3=2 then p ><#$
+end
+:F6
+pln Выберите цель для следущих ударов
+M5=0
+if M5<I3 then T3=G6&proc L5
+if M5<I3 then T3=H6&proc Q5
+if M5<I3 then T3=I6&proc U5
+btn T2,Обратно
+end
+:N5
+F3=0
+goto T2
+end
+:R5
+F3=1
+goto T2
+end
+:V5
+F3=2
+goto T2
+end
+:J3
+M5=0
+F3=-1
+if M5<I3 then T3=1&proc O5
+if M5<I3 then T3=1&proc S5
+if M5<I3 then T3=1&proc A6
+end
+:J6
+K6=F3&V2=0
+goto T2
+end
+:Use_Состояние_Игры_Сохранить
+if I3=0 then save T2
+if I3>0 then pln Сохранение недоступно во время боя
+end
+:Use_Inv
+proc V4
+end
+:L6
+pln Это нельзя применить тут
+end
+:Use_Абордажная кошка_Применить
+if R3=0 and E0=2 then cls&goto T0
+if R3=0 and E0=1 then cls&goto Q0
+goto L6
+:Use_Стеклянная капля_Применить
+if R3=0 and E0=9 then cls&goto I2
+goto L6
+:M6
+N6=1
+if H4<=0 then R3=1&N6=0&O6=-1&pln #/$Игра проиграна, так как параметр "Хиты" стал равен нулю
+if N6=0 then btn C0,Начать игру сначала
+end
+:B0
+p Особые благодарности:#/$
+pln 
+p Andreas Viklund#/$
+p http://andreasviklund.com#/$
+p За web-шаблон#/$
+pln 
+p ToonDoo#/$
+p http://www.toondoo.com/#/$
+p За иллюстрации#/$
+end
+:F0
+R3=0
+if P6>0 then decordel&P6=0
+if Q6<>1 then Q6=1&music dragon/vivaldi_op8_4_1.mid
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+if R3=0 then textalign=3&image dragon/img9.JPG
+textalign=1
+p Ты осторожно подходишь к мрачному замку, он окружен стеной#$
+p в пару твоих ростов, а единственные ворота охраняют 3 могучих#$
+p тролля. #/$#/$Хочешь уйти <1> или атакуешь охранников <2>#/$
+if E0=1 then proc V4
+E0=1
+proc M6
+if R3=0 then btn R1,<1> Развилка
+if R3=0 then btn V1,<2> Атака ворот
+end
+
+:G0
+R3=0
+if P6>0 then decordel&P6=0
+if Q6<>2 then Q6=2&music dragon/vivaldi_op8_3_2.mid
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+if R3=0 then textalign=3&image dragon/img11.JPG
+textalign=1
+p Дорожка приводит тебя на небольшое кладбище. Оно выглядит в
+p полне мирно и безопасно. #/$#/$В центре кладбища находится не
+p большая каменная часовня, ты заглядываешь внутрь. Там все сте
+p ны выглядят как после пожара, на полу угли, все покрыто пылью
+p . #/$#/$У часовни есть второй этаж, но лестница туда сгорела#$
+p и ты можешь только смотреть на дверь на высоте почти 3х твоих#$
+p ростов. #/$#/$Больше ничего примечательного не нашлось <1>#/$
+if E0=2 then proc V4
+E0=2
+proc M6
+if R3=0 then btn R1,<1> Уйти
+end
+
+:H0
+R3=0
+if P6>0 then decordel&P6=0
+if Q6<>1 then Q6=1&music dragon/vivaldi_op8_4_1.mid
+if E0<>3 then proc R6
+if K6=0 and I3>0 then proc S6
+T3=0
+if K6>=0 and I3>0 then T3=7&proc Q4
+if T3>0 then proc V6
+O6=0
+proc O3
+if R3=0 then cls
+p Если победил его то переходи на <1>#/$
+if I3>0 then pln &p Обычный бой#/$
+if E0=3 then proc V4
+if K6>=0 then p Атака:#T6$
+if K6=0 then proc A7
+if E0=3 then pln 
+T3=0
+if I3>0 then T3=7&proc Q4
+if T3>0 then p #/$&proc C6
+if T3>0 then proc S3
+if T3>0 then proc P4
+if T3>0 and K6>=0 then p  Атака:#U6$#$
+if T3>0 and K6>=0 then proc B7
+if T3>0 and K6>=0 then pln 
+K6=-1
+B3=0
+proc C3
+C7=B3+D4
+
+T6=C7
+E0=3
+proc M6
+B3=0
+proc C3
+C7=B3+A5
+
+U6=C7
+if I3>0 and R3=0 then btn J6,Атака
+if I3=0 then if R3=0 then btn E2,<1> Победа
+if I3>0 then proc Q3
+end
+
+:R6
+V2=0
+I3=1
+K6=-1
+G6=7
+A5=4
+H3=6
+M4=K5
+proc J3
+end
+:S6
+if T6>U6 then N6=T6-U6&H3=H3-N6&T3=1&proc P5
+end
+:V6
+if T6<U6 then N6=U6-T6&H4=H4-N6&if H4<0 then H4=0
+end
+:A7
+if T6>U6 then N6=T6-U6&if N6>0 then p Нанес повреждение #N6$#$&if H3<=0 then p  Убил
+end
+:B7
+if T6<U6 then N6=U6-T6&p Нанес повреждение #N6$#$
+end
+:I0
+R3=0
+if P6>0 then decordel&P6=0
+if Q6<>3 then Q6=3&music dragon/frog2.mp3
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+p Ты находишься на небольшом островке в центре болота. Неболь
+p шие клочки ткани отмечают место где ты одолел Болотного духа.
+p #$#/$#/$Больше тут ничего примечательного нет и ты решаешь верн
+p уться <1>#/$
+if E0=4 then proc V4
+E0=4
+proc M6
+if R3=0 then btn J2,<1> Болото
+end
+
+:J0
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if E0<>5 then proc D7
+if R3=0 then cls
+p На берегу много обломков от кораблей, похоже печальная учас
+p ть постигла тут многих мореходов. #/$#/$Бродя вокруг этого му
+p сора, ты находишь небольшую абордажную кошку  с привязанным к
+p уском веревки, а так же 5 монет. #/$#/$Но больше ничего интер
+p есного тебе не попалось <1>#/$
+E0=5
+proc M6
+if R3=0 then btn L2,<1> Прочь от берега
+proc V4
+end
+
+:D7
+B3=5
+C7=B3+V3
+V3=C7
+if V3<=0 then V3=0
+if not Абордажная кошка then inv+ Абордажная кошка
+end
+:L0
+R3=0
+if P6>0 then decordel&P6=0
+if Q6<>4 then Q6=4&music dragon/frogs.mp3
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+p Если у тебя на Листе персонада записано "камень", то перехо
+p ди на параграф <1>. Если записано "призрак", то переходи на п
+p араграф <2>. А если ничего из этого не записано, то переходи#$
+p на параграф <3>#/$
+if E0=6 then proc V4
+E0=6
+proc M6
+if R3=0 and E7=1 then cls&goto T1
+if R3=0 and F7=1 then cls&goto J1
+cls&goto O2
+if O6=29 then btn T1,<1> Шахта
+if O6=23 then btn J1,<2> Камень
+if R3=0 then btn O2,<3> Трясина
+end
+
+:M0
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+if R3=0 then textalign=3&image dragon/img8.JPG
+textalign=1
+p Ты победил, туман рассеивается без следа, а на землю перед#$
+p тобой падает драный плащ с костями и ... отличный меч. #/$#/$Т
+p ы осторожно берешь его в руку, оружие как само просится в бой
+p #$<1>#/$
+if E0=7 then proc V4
+E0=7
+proc M6
+if R3=0 then btn U1,<1> Забрать меч
+end
+
+:N0
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+p Если у тебя записано "Свободная деревня", то переходи на па
+p раграф <1>. Иначе переходи на параграф <2>#/$
+if E0=8 then proc V4
+E0=8
+proc M6
+if R3=0 and G7=1 then cls&goto G2
+cls&goto N2
+if O6=37 then btn G2,<1> Свободная деревня
+if R3=0 then btn N2,<2> Наместник
+end
+
+:O0
+R3=0
+if P6>0 then decordel&P6=0
+play dragon/gorun.MP3
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+if R3=0 then textalign=3&image dragon/img6.JPG
+textalign=1
+p Только-только ты успел разделаться с противником,, как огро
+p мная черная тень появляется из-за угла...дракон собственной п
+p ерсоной пожаловал на шум. #/$#/$Ты вскидываешь оружие, но яще
+p р пускает в тебя струю огня. Если тебе нечем защититься от не
+p е, то остается попытаться увернуться<1>#/$
+if E0=9 then proc V4
+E0=9
+proc M6
+if R3=0 then btn E1,<1> Увернуться
+end
+
+:P0
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if E0<>10 then proc H7
+if R3=0 then cls
+p Фортуна не была на твоей стороне в этот раз, кошка внезапно
+p #$срывается и ты падаешь вниз, теряя 2 хита и 1 силу воли (умен
+p ьши свои параметры). #/$#/$Хочешь попробовать еще раз <1> или
+p #$сочтешь за лучшее покинуть кладбище <2>#/$
+E0=10
+proc M6
+if R3=0 then btn Q1,<1> Еще раз
+if R3=0 then btn M2,<2> Хватит
+proc V4
+end
+
+:H7
+B3=-2
+C7=B3+H4
+H4=C7
+if H4<=0 then H4=0
+B3=-1
+C7=B3+G5
+G5=C7
+if G5<=0 then G5=0
+B3=-1
+C7=B3+H5
+H5=C7
+if H5<=0 then H5=0
+end
+:Q0
+R3=0
+if P6>0 then decordel&P6=0
+play dragon/forest.MP3
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+p Ты отходишь подальше от ворот, забрасываешь на стену аборда
+p жную кошку и осторожно перебираешься через стену. #/$#/$Но то
+p лько ты спустился на землю, как из ближайшего строения выходи
+p т гоблин <1>#/$
+if E0=11 then proc V4
+E0=11
+proc M6
+if R3=0 then btn B1,<1> Бой
+end
+
+:T0
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+p Ты забрасываешь в проем двери второго этажа абордажную кошк
+p у и карабкаешься наверх. #/$#/$Как только ты касаешься рукой#$
+p двери, она озаряется зеленым светом <1>#/$
+if E0=12 then proc V4
+E0=12
+proc M6
+if R3=0 then btn O1,<1> Сгруппироваться
+end
+
+:U0
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if E0<>13 then proc I7
+if R3=0 then cls
+p На этот раз ты был удачлив и твоя максимальная сила увеличи
+p лась на 2 хита. #/$#/$Забравшись на второй этаж, ты находишь#$
+p комнату, где лежат несколько обугленных скелетов. #/$#/$Еще ты
+p #$находишь надпись на стене "дракон сжег всех". Больше ничего и
+p нтересного нет. #/$#/$Хочешь спуститься и забраться еще раз<1
+p > или предпочтешь уйти с кладбища <2>#/$
+E0=13
+proc M6
+if R3=0 then btn Q1,<1> Еще раз
+if R3=0 then btn M2,<2> Хватит
+proc V4
+end
+
+:I7
+B3=2
+C7=B3+A4
+A4=C7
+if A4<=0 then A4=0
+B3=-1
+C7=B3+H5
+H5=C7
+if H5<=0 then H5=0
+end
+:V0
+R3=0
+if P6>0 then decordel&P6=0
+play dragon/gorun.MP3
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+p Не давая дракону время на еще какие-то фокусу, ты взмахивае
+p шь оружием и бросаешься на монстра<1>#/$
+if E0=14 then proc V4
+E0=14
+proc M6
+if R3=0 then btn P2,<1> Бой
+end
+
+:A1
+R3=0
+if P6>0 then decordel&P6=0
+if Q6<>5 then Q6=5&music dragon/magic.mp3
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+if R3=0 then textalign=3&image dragon/img7.JPG
+textalign=1
+p У знахаря можно приобрести некоторые снадобья, которые могу
+p т помочь тебе в твоих приключениях. #/$#/$За 5 монет можно ку
+p пить отвар силы, который увеличит твою максимальную силу на 2
+p . #/$#/$За 10 знахарь приготовит яд, покрыв ядом свою оружие#$
+p ты увеличишь силу удара на 2. #/$#/$Еще за 5 монет можно купит
+p ь 1 флакончик с настойкой, которая моментально восстановит те
+p бе 4 силы, ее можно будет выпить прямо в процессе боя. #/$#/$
+p Ну а если ничего купить не хочешь, то остается покинуть знаха
+p ря <1>#/$
+if E0=15 then proc V4
+E0=15
+proc M6
+if R3=0 then btn G2,<1> Покинуть
+if R3=0 and I3=0 and V3>=5 and B4=0 then btn U3,Купить отвар силы
+if R3=0 and I3=0 and V3>=10 and E4=0 then btn C4,Купить яд на оружие
+if R3=0 and I3=0 and V3>=5 and K4=0 then btn J4,Купить целебную настойку
+end
+
+:B1
+R3=0
+if P6>0 then decordel&P6=0
+if E0<>16 then proc J7
+if K6=0 and I3>0 then proc S6
+T3=0
+if K6>=0 and I3>0 then T3=7&proc Q4
+if T3>0 then proc V6
+O6=0
+proc O3
+if R3=0 then cls
+p Если победил его, то <1>#/$
+if I3>0 then pln &p Обычный бой#/$
+if E0=16 then proc V4
+if K6>=0 then p Атака:#T6$
+if K6=0 then proc A7
+if E0=16 then pln 
+T3=0
+if I3>0 then T3=7&proc Q4
+if T3>0 then p #/$&proc C6
+if T3>0 then proc S3
+if T3>0 then proc P4
+if T3>0 and K6>=0 then p  Атака:#U6$#$
+if T3>0 and K6>=0 then proc B7
+if T3>0 and K6>=0 then pln 
+K6=-1
+B3=0
+proc C3
+C7=B3+D4
+
+T6=C7
+E0=16
+proc M6
+B3=0
+proc C3
+C7=B3+A5
+
+U6=C7
+if I3>0 and R3=0 then btn J6,Атака
+if I3=0 then if R3=0 then btn O0,<1> Победа
+if I3>0 then proc Q3
+end
+
+:J7
+V2=0
+I3=1
+K6=-1
+G6=7
+A5=4
+H3=6
+M4=K5
+proc J3
+end
+:C1
+R3=0
+if P6>0 then decordel&P6=0
+if E0<>17 then proc K7
+if K6=0 and I3>0 then proc S6
+T3=0
+if K6>=0 and I3>0 then T3=8&proc Q4
+if T3>0 then proc V6
+if K6=1 and I3>0 then proc L7
+T3=0
+if K6>=0 and I3>0 then T3=8&proc S4
+if T3>0 then proc N7
+if K6=2 and I3>0 then proc O7
+T3=0
+if K6>=0 and I3>0 then T3=8&proc U4
+if T3>0 then proc Q7
+O6=0
+proc O3
+if R3=0 then cls
+p Если смог победить их, то <1>#/$
+if I3>0 then pln &p Обычный бой#/$
+if E0=17 then proc V4
+if K6>=0 then p Атака:#T6$
+if K6=0 then proc A7
+if K6=1 then proc R7
+if K6=2 then proc S7
+if E0=17 then pln 
+T3=0
+if I3>0 then T3=8&proc Q4
+if T3>0 then p #/$&proc C6
+if T3>0 then proc S3
+if T3>0 then proc P4
+if T3>0 and K6>=0 then p  Атака:#U6$#$
+if T3>0 and K6>=0 then proc B7
+if T3>0 and K6>=0 then pln 
+T3=0
+if I3>0 then T3=8&proc S4
+if T3>0 then p #/$&proc D6
+if T3>0 then proc S3
+if T3>0 then proc R4
+if T3>0 and K6>=0 then p  Атака:#M7$#$
+if T3>0 and K6>=0 then proc T7
+if T3>0 and K6>=0 then pln 
+T3=0
+if I3>0 then T3=8&proc U4
+if T3>0 then p #/$&proc E6
+if T3>0 then proc S3
+if T3>0 then proc T4
+if T3>0 and K6>=0 then p  Атака:#P7$#$
+if T3>0 and K6>=0 then proc U7
+if T3>0 and K6>=0 then pln 
+K6=-1
+B3=0
+proc C3
+C7=B3+D4
+
+T6=C7
+E0=17
+proc M6
+B3=0
+proc C3
+C7=B3+A5
+
+U6=C7
+B3=0
+proc C3
+C7=B3+B5
+
+M7=C7
+B3=0
+proc C3
+C7=B3+C5
+
+P7=C7
+if I3>0 and R3=0 then btn J6,Атака
+if I3>1 and R3=0 then btn F6,Выбрать цель
+if I3=0 then if R3=0 then btn O0,<1> Победа
+if I3>0 then proc Q3
+end
+
+:K7
+V2=0
+I3=3
+K6=-1
+G6=8
+A5=6
+H3=8
+H6=8
+B5=6
+L3=8
+I6=8
+C5=6
+N3=8
+M4=K5
+proc J3
+end
+:L7
+if T6>M7 then N6=T6-M7&L3=L3-N6&T3=1&proc T5
+end
+:N7
+if T6<M7 then N6=M7-T6&H4=H4-N6&if H4<0 then H4=0
+end
+:O7
+if T6>P7 then N6=T6-P7&N3=N3-N6&T3=1&proc B6
+end
+:Q7
+if T6<P7 then N6=P7-T6&H4=H4-N6&if H4<0 then H4=0
+end
+:R7
+if T6>M7 then N6=T6-M7&if N6>0 then p Нанес повреждение #N6$#$&if L3<=0 then p  Убил
+end
+:S7
+if T6>P7 then N6=T6-P7&if N6>0 then p Нанес повреждение #N6$#$&if N3<=0 then p  Убил
+end
+:T7
+if T6<M7 then N6=M7-T6&p Нанес повреждение #N6$#$
+end
+:U7
+if T6<P7 then N6=P7-T6&p Нанес повреждение #N6$#$
+end
+:E1
+R3=0
+if P6>0 then decordel&P6=0
+play dragon/gorun.MP3
+I3=0
+O6=0
+proc O3
+if E0<>18 then proc A8
+if R3=0 then cls
+p Ты отпрыгиваешь в сторону, но огнедыщащая тварь была слишко
+p м близко и огонь задевает тебя, ты теряешь 2D6 хитов <1>#/$
+E0=18
+proc M6
+if R3=0 then btn V0,<1> Атака
+proc V4
+end
+
+:A8
+B3=1
+proc V7
+C7=B3+H4
+H4=C7
+if H4<=0 then H4=0
+end
+:F1
+R3=0
+if P6>0 then decordel&P6=0
+if E0<>19 then proc B8
+if K6=0 and I3>0 then proc S6
+T3=0
+if K6>=0 and I3>0 then T3=7&proc Q4
+if T3>0 then proc V6
+if K6=1 and I3>0 then proc L7
+T3=0
+if K6>=0 and I3>0 then T3=8&proc S4
+if T3>0 then proc N7
+O6=0
+proc O3
+if R3=0 then cls
+p Если победил их то <1>#/$
+if I3>0 then pln &p Обычный бой#/$
+if E0=19 then proc V4
+if K6>=0 then p Атака:#T6$
+if K6=0 then proc A7
+if K6=1 then proc R7
+if E0=19 then pln 
+T3=0
+if I3>0 then T3=7&proc Q4
+if T3>0 then p #/$&proc C6
+if T3>0 then proc S3
+if T3>0 then proc P4
+if T3>0 and K6>=0 then p  Атака:#U6$#$
+if T3>0 and K6>=0 then proc B7
+if T3>0 and K6>=0 then pln 
+T3=0
+if I3>0 then T3=8&proc S4
+if T3>0 then p #/$&proc D6
+if T3>0 then proc S3
+if T3>0 then proc R4
+if T3>0 and K6>=0 then p  Атака:#M7$#$
+if T3>0 and K6>=0 then proc T7
+if T3>0 and K6>=0 then pln 
+K6=-1
+B3=0
+proc C3
+C7=B3+D4
+
+T6=C7
+if R3=0 then textalign=3&image dragon/img4.JPG
+textalign=1
+E0=19
+proc M6
+B3=0
+proc C3
+C7=B3+A5
+
+U6=C7
+B3=0
+proc C3
+C7=B3+B5
+
+M7=C7
+if I3>0 and R3=0 then btn J6,Атака
+if I3>1 and R3=0 then btn F6,Выбрать цель
+if I3=0 then if R3=0 then btn B2,<1> Победа
+if I3>0 then proc Q3
+end
+
+:B8
+V2=0
+I3=2
+K6=-1
+G6=7
+A5=4
+H3=6
+H6=8
+B5=6
+L3=8
+M4=K5
+proc J3
+end
+:G1
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+p Ты взял обломок весла в руку поудобнее и направился к гобли
+p ну. Увидев тебя он поначалу заорал "а ну подь сюда, животное!
+p "#/$#/$Но потом до него похоже дошло, что ты идешь не выполня
+p ть его команды, а атаковать и гоблин сам бросился на тебя <1>#/$
+if E0=20 then proc V4
+E0=20
+proc M6
+if R3=0 then btn H0,<1> Драться
+end
+
+:H1
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if E0<>21 then proc C8
+if R3=0 then cls
+p Увеличь свою силу воли на 4 и запишии "Свободная деревня" н
+p а свой Лист Игрока <1>#/$
+E0=21
+proc M6
+cls&goto G2
+if R3=0 then btn G2,<1> Свободная деревня
+proc V4
+end
+
+:C8
+B3=4
+C7=B3+G5
+G5=C7
+if G5<=0 then G5=0
+G7=1
+end
+:I1
+R3=0
+if P6>0 then decordel&P6=0
+if Q6<>1 then Q6=1&music dragon/vivaldi_op8_4_1.mid
+play dragon/smex.MP3
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+p Ты все ближе к центру болота. По сторонам начинают клубитьс
+p я клочья тумана, вдруг они внезапно сгущаются, окружают тебя#$
+p и перед тобой возникает страшный Болотный дух. #/$#/$Ты ударяе
+p шь его оружием, но оно проходит сквозь него и тут ты чувствуе
+p шь как "что-то" вторгается в твои мысли. #/$#/$Похоже тебе пр
+p едстоит бой на силе воли <1>#/$
+if E0=22 then proc V4
+E0=22
+proc M6
+if R3=0 then btn Q2,<1> Бой
+end
+
+:J1
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+if R3=0 then textalign=3&image dragon/img12.JPG
+textalign=1
+p Дорога приводит тебя к шахте в небольшой каменной гряде. По
+p хоже раньше тут добывали что-то. Но сейчас вход в шахту завал
+p ен большим камнем. #/$#/$Камень и стенки шахты вокруг него об
+p ожжены, как будто снаружи горел большой костер. #/$#/$Несколь
+p ко камней поменьше подпирают камень, заграждающий вход. Если#$
+p у тебя более 14 хитов, то тебе хватит сил разобрать завал <1>.
+p #$#/$#/$Если же сил не хватает или не хочется связываться, то о
+p стается только покинуть это место <2>#/$
+if E0=23 then proc V4
+E0=23
+proc M6
+B3=14
+if R3=0 and H4>B3 or O6=38 then btn H2,<1> Разобрать
+if R3=0 then btn J2,<2> Покинуть
+end
+
+:N1
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if E0<>24 then proc D8
+if R3=0 then cls
+p Ты трусливо прячешься между камнями и ждешь пока пара не ск
+p рывается из виду.#/$#/$Вероятно, чтобы ты не был таким трусли
+p вым, судьба подбросила тебе небольшой подарок - ты находишь в
+p #$кустах маленький метательный кинжал. #/$#/$Во время битвы ты#$
+p можешь кинуть его во врага и этот бросок будет стоить ему 1D4#$
+p хитов, но сделать это можно конечно только один раз за время б
+p оя. #/$#/$Ты прячешь находку за пояс и когда вскрики старика#$
+p совсем стихли, осторожно выходишь на дорогу, по которой недавн
+p о прошли незнакомцы <1>#/$
+E0=24
+proc M6
+if R3=0 then btn R1,<1> На дорогу
+proc V4
+end
+
+:D8
+B3=1
+C7=B3
+K5=C7
+if K5<=0 then K5=0
+end
+:O1
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+p Проверь свою удачу. Если ты удачлив, то <1>, а если не пове
+p зло, то <2>#/$
+if E0=25 then proc V4
+E0=25
+proc M6
+B3=0&proc C3
+if R3=0 and H5>B3 then cls&goto U0
+cls&goto P0
+if O6=13 then btn U0,<1> Выйграл
+if R3=0 then btn P0,<2> Проиграл
+end
+
+:P1
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if E0<>26 then proc E8
+if R3=0 then cls
+p Откатывание камня отняло у тебя 2D6 хитов, брось кубик два#$
+p раза и вычти результаты из своих хитлов.Запишите "камень" на с
+p вой Лист Игрока <1>#/$
+E0=26
+proc M6
+cls&goto J2
+if R3=0 then btn J2,<1> Дальше
+proc V4
+end
+
+:E8
+B3=1
+proc V7
+C7=B3+H4
+H4=C7
+if H4<=0 then H4=0
+E7=1
+end
+:Q1
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+p Поведение данной двери настолько заинтересовало тебя, что т
+p ы решаешься на еще одну попытку, надеясь, что тебе повезет<1>#/$
+if E0=27 then proc V4
+E0=27
+proc M6
+if R3=0 then btn T0,<1> Попытка
+end
+
+:R1
+R3=0
+if P6>0 then decordel&P6=0
+if Q6<>2 then Q6=2&music dragon/vivaldi_op8_3_2.mid
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+if R3=0 then textalign=3&image dragon/img3.JPG
+textalign=1
+p Дорога идет от небольшой деревне через лес в сторону в стор
+p ону мрачного замка на вершине холма. #/$#/$Небольшая тропа от
+p ветвляется и теряется в сизом тумане болота. Еще совсем еле з
+p аметная дорожка ведет к голой рощице, в которой видна какое-т
+p о небольшое каменное строение. #/$#/$Пойдешь в деревню <1>, в
+p #$замок <2>, к болоту <3> или к роще <4>#/$
+if E0=28 then proc V4
+E0=28
+proc M6
+if R3=0 then btn N0,<1> Деревня
+if R3=0 then btn F0,<2> Замок
+if R3=0 then btn J2,<3> Болото
+if R3=0 then btn G0,<4> Роща
+end
+
+:T1
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+p Ты приходишь к старой шахте, где недавно ты разбросал завал
+p #$из опаленных камней. Тут ничего не изменилось с того момента,
+p #$только болотная грязь еще более засохла. #/$#/$Не найдя ничег
+p о полезного, ты уходишь от этой братской могилы <1>#/$
+if E0=29 then proc V4
+E0=29
+proc M6
+if R3=0 then btn J2,<1> Уйти
+end
+
+:U1
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if E0<>30 then proc F8
+if R3=0 then cls
+if R3=0 then textalign=3&image dragon/img8.JPG
+textalign=1
+p С таким клинком твоя Сила удара теперь равна 10. Запиши на#$
+p Листе персонажа "призрак" и переходи на <1>#/$
+E0=30
+proc M6
+cls&goto I0
+if R3=0 then btn I0,<1> Чистое болото
+proc V4
+end
+
+:F8
+B3=10
+C7=B3
+D4=C7
+if D4<=0 then D4=0
+F7=1
+end
+:C0
+if E0<>31 then proc G8
+R3=0
+if P6>0 then decordel&P6=0
+if Q6<>6 then Q6=6&music dragon/waves.mp3
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+if R3=0 then textalign=3&image dragon/img1.JPG
+textalign=1
+p Страшная буря мотала корабль несколько дней, вы все потерял
+p и счет времени и надежду выжить. Все паруса были порваны и во
+p лны в конце концов перевернули корабль. #/$#/$Ты сумел выплыт
+p ь, ухватившись за обломок мачты и волны вынесли тебя на неизв
+p естный берег. Долго ты метался по берегу и тщетно смотрел в п
+p учину, но похоже никто больше не спасся. #/$#/$В твоем поясе#$
+p ты нашел 10 монет и баночку с огненным песком, который можно б
+p росать во врага. Правда, в баночке было всего на 3 броска, но
+p #$каждый такой бросок может стоить врагу 1D6 хитов. #/$#/$Так ж
+p е тебе попался кусок тяжелого весла, который может с успехом#$
+p быть использован как дубина (Сила удара=4). #/$#/$Хочешь пойти
+p #$прочь от берега <1> или осмотреть берег внимательнее <2>#/$
+E0=31
+proc M6
+if R3=0 then btn L2,<1> Прочь от берега
+if R3=0 then btn J0,<2> Осмотреть
+proc V4
+end
+
+:G8
+perkill
+invkill
+music stop
+inv+ Состояние_Игры
+B3=4
+D4=B3
+B3=2
+G5=B3
+B3=3
+A3=B3
+B3=11
+proc C3
+A4=B3
+B3=4
+proc H8
+H5=B3
+B3=6
+I5=B3
+B3=10
+V3=B3
+H4=A4
+end
+:V1
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+p Ты подкрадываешься поближе к воротам и решительно атакуешь#$
+p троллей. Они явно не ожидали такого, но поняв что ты один - с#$
+p ревом бросаются на тебя <1>#/$
+if E0=32 then proc V4
+E0=32
+proc M6
+if R3=0 then btn C1,<1> Бой
+end
+
+:A2
+R3=0
+if P6>0 then decordel&P6=0
+if Q6<>7 then Q6=7&music dragon/win.mp3
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+if R3=0 then textalign=3&image dragon/img13.JPG
+textalign=1
+p Точным ударами тебе удается сначала повредить дракону лапу,
+p #$а потом нанести смертельный удар чудовищу. #/$#/$Мертвая туша
+p #$грузно оседает на землю. Оставшиеся тролли и гоблины в панике
+p #$разбежались прочь, понимая, что их власть над этими землями о
+p кончена. #/$#/$Ты победил! #/$#/$Жители этих земель были наст
+p олько рады освобождению от власти кровожадного ящера, что нан
+p яли самый лучший корабль и команду, чтобы довезти тебя домой.
+p #/$#/$А сокровища из замка дракона позволили тебе уже не пуск
+p аться более в рискованные путешествия...ну разве что ради удо
+p вольствия. #/$#/$КОНЕЦ.#/$
+if E0=33 then proc V4
+E0=33
+proc M6
+end
+
+:B2
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+p Когда тела врагов перестают дергаться, со всех сторон высып
+p ают обрадованные жители деревни, наконец-то их мучители мертв
+p ы. #/$#/$Эта пара была наместником и его помощником в этой де
+p ревне. А правит всей бандой черный дракон, живущий в замке. #/$
+p #/$В качестве награды, деревенский знахарь приготовил для теб
+p я особый отвар, увеличивающий силу воли <1>#/$
+if E0=34 then proc V4
+E0=34
+proc M6
+if R3=0 then btn H1,<1> Выпить
+end
+
+:E2
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if E0<>35 then proc I8
+if R3=0 then cls
+p Старик страшно рад своему спасенью и рассказывает тебе свою
+p #$историю. Страна, где ты оказался, находится под властью жесто
+p кого огнедышащего дракона, который живет в замке. #/$#/$Есть#$
+p легенда, что оружие против дракона спрятано в заколдованном бо
+p лоте, но никто из смельчаков не вернулся с болота живым, их п
+p огубил Болотный дух. #/$#/$Еще старик рассказывает тебе, где#$
+p он спрятал свой лесорубный топор, за что его собственно и арес
+p товали и вели к дракону на расправу. #/$#/$Вооружившись топор
+p ом (Сила удара +2), ты сразу почувствовал себя увереннее. Ста
+p рик слезно просит освободить его родственников, но он сам сли
+p шком слаб, чтобы идти с тобой <1>#/$
+E0=35
+proc M6
+if R3=0 then btn R1,<1> Дальше
+proc V4
+end
+
+:I8
+B3=6
+C7=B3
+D4=C7
+if D4<=0 then D4=0
+end
+:F2
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+p Если на Листе персонажа записано "призрак", то переходи на#$
+p параграф <1>. Если нет такой записи, то переходи на параграф <
+p 2>#/$
+if E0=36 then proc V4
+E0=36
+proc M6
+if R3=0 and F7=1 then cls&goto I0
+cls&goto I1
+if O6=4 then btn I0,<1> Чистое болото
+if R3=0 then btn I1,<2> Призрак
+end
+
+:G2
+R3=0
+if P6>0 then decordel&P6=0
+if Q6<>8 then Q6=8&music dragon/farm.mp3
+I3=0
+O6=0
+proc O3
+if E0<>37 then proc J8
+if R3=0 then cls
+if R3=0 then textalign=3&image dragon/img10.JPG
+textalign=1
+p Жители деревни радостно приветствуют тебя и досыта кормят (
+p восстанови Хиты до своего максимума). #/$#/$Хочешь покинуть д
+p еревню <1> или зайти в лавку к знахарю <2>#/$
+E0=37
+proc M6
+if R3=0 then btn R1,<1> Покинуть
+if R3=0 then btn A1,<2> Лавка
+proc V4
+end
+
+:J8
+C7=A4
+H4=C7
+if H4<=0 then H4=0
+end
+:H2
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if E0<>38 then proc K8
+if R3=0 then cls
+p Сначала ты откатываешь небольшие камни, потом напрягаешься#$
+p изо всех сил и откатываешь основной валун (теряя несколько хит
+p ов) Он действительно закрывал выход в небольшую шахту. #/$#/$
+p Внутри, прямо около входа лежит несколько человеческих скелет
+p ов в лохмотьях и сломанные ржавые лопаты и кирки. #/$#/$Похож
+p е, несчастных закрыли в шахте и они пытались освободиться, но
+p #$сил не хватило. #/$#/$Что интересно, на стенах пещеры видны н
+p ебольшие следы огня, как будто языки сильного пламени несколь
+p ко раз попали в шахту, но на одеждах людей следов огня нет. #/$
+p #/$Осмотрев все внимательно ты находишь большой кусок красног
+p о стекла в форме капли , ты берешь его себе и покидаешь шахту
+p #$<1>#/$
+if E0=38 then proc V4
+E0=38
+proc M6
+if R3=0 then btn P1,<1> Покинуть
+end
+
+:K8
+if not Стеклянная капля then inv+ Стеклянная капля
+end
+:I2
+R3=0
+if P6>0 then decordel&P6=0
+play dragon/flame.mp3
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+p Ты выхватываешь из кармана стеклянную каплю, которую нашел#$
+p на болоте и...о чудо! Огонь проходит мимо тебя, не причиняя вр
+p еда <1>#/$
+if E0=39 then proc V4
+E0=39
+proc M6
+if R3=0 then btn V0,<1> Атака
+end
+
+:J2
+R3=0
+if P6>0 then decordel&P6=0
+if Q6<>9 then Q6=9&music dragon/forest.MP3
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+p Ты стоишь около болота, на развилке дорог. Широкая  дорога#$
+p идет по краю болота в сторону низкой каменной гряды, а совсем#$
+p узкая дорожка ведет прямо в центр болота, затянутый туманом. #/$
+p #/$Странно, широкая дорога выглядит как неиспользуемая, но яв
+p но ей активно пользовались раньше. #/$#/$Хочешь пойти в центр
+p #$болота <1>, по широкой дороге <2> или пойти прочь от болота <
+p 3>#/$
+if E0=40 then proc V4
+E0=40
+proc M6
+if R3=0 then btn F2,<1> Центр болота
+if R3=0 then btn L0,<2> Широкая дорога
+if R3=0 then btn R1,<3> Развилка
+end
+
+:L2
+R3=0
+if P6>0 then decordel&P6=0
+if Q6<>10 then Q6=10&music dragon/tchaikovsky_op71a_2_d.mid
+play dragon/moan.mp3
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+if R3=0 then textalign=3&image dragon/img2.JPG
+textalign=1
+p Вдруг ты заметил на опушке леса старика и гоблина. Гоблин в
+p ооружен деревянной дубиной и тычками этой дубины он безжалост
+p но гонит старика по лесной дороге. #/$#/$Старик спотыкается,#$
+p падает, но гоблин заставляет его подниматься и гонит дальше. #/$
+p #/$Хочешь вмешаться <1> или предпочтешь спрятаться <2>#/$
+if E0=41 then proc V4
+E0=41
+proc M6
+if R3=0 then btn G1,<1> Вмешаться
+if R3=0 then btn N1,<2> Спрятаться
+end
+
+:M2
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+p Ты решаешь, что больше рисковать не стоит и лучше осторожно
+p #$покинуть это крайне странное место <1>.#/$
+if E0=42 then proc V4
+E0=42
+proc M6
+if R3=0 then btn R1,<1> Покинуть
+end
+
+:N2
+R3=0
+if P6>0 then decordel&P6=0
+if Q6<>1 then Q6=1&music dragon/vivaldi_op8_4_1.mid
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+if R3=0 then textalign=3&image dragon/img4.JPG
+textalign=1
+p На подходе к деревни как из под земли перед тобой появляютс
+p я гоблин и тролль. "А ну, скотина, на колени" - орет гоблин.#$
+p 
+#/$Но ты поднимаешь оружие и атакуешь монстров <1>#/$
+if E0=43 then proc V4
+E0=43
+proc M6
+if R3=0 then btn F1,<1> Бой с наместником
+end
+
+:O2
+R3=0
+if P6>0 then decordel&P6=0
+I3=0
+O6=0
+proc O3
+if R3=0 then cls
+p Дорога начинает петлять, и вдруг утыкается в болото и обрыв
+p ается. Ты пробуешь палкой дорогу - да, она не исчезала, а про
+p сто затоплена болотом. #/$#/$Пробуешь идти вброд, но быстро п
+p онимаешь, что так ты окажешься в трясине, из которой не выбра
+p ться и поворачиваешь назад <1>#/$
+if E0=44 then proc V4
+E0=44
+proc M6
+if R3=0 then btn J2,<1> Назад
+end
+
+:P2
+R3=0
+if P6>0 then decordel&P6=0
+if E0<>45 then proc L8
+if K6=0 and I3>0 then proc S6
+T3=0
+if K6>=0 and I3>0 then T3=9&proc Q4
+if T3>0 then proc V6
+O6=0
+proc O3
+if R3=0 then cls
+p Если победил его, то <1>#/$
+if I3>0 then pln &p Обычный бой#/$
+if E0=45 then proc V4
+if K6>=0 then p Атака:#T6$
+if K6=0 then proc A7
+if E0=45 then pln 
+T3=0
+if I3>0 then T3=9&proc Q4
+if T3>0 then p #/$&proc C6
+if T3>0 then proc S3
+if T3>0 then proc P4
+if T3>0 and K6>=0 then p  Атака:#U6$#$
+if T3>0 and K6>=0 then proc B7
+if T3>0 and K6>=0 then pln 
+K6=-1
+B3=0
+proc C3
+C7=B3+D4
+
+T6=C7
+E0=45
+proc M6
+B3=0
+proc C3
+C7=B3+A5
+
+U6=C7
+if I3>0 and R3=0 then btn J6,Атака
+if I3=0 then if R3=0 then btn A2,<1> Победа
+if I3>0 then proc Q3
+end
+
+:L8
+V2=0
+I3=1
+K6=-1
+G6=9
+A5=12
+H3=20
+M4=K5
+proc J3
+end
+:Q2
+R3=0
+if P6>0 then decordel&P6=0
+if E0<>46 then proc M8
+if K6=0 and I3>0 then proc N8
+T3=0
+if K6>=0 and I3>0 then T3=10&proc Q4
+if T3>0 then proc P8
+O6=0
+proc O3
+O4=1
+if R3=0 then cls
+p Если победил нежить, то <1>#/$
+if I3>0 then pln &p Бой воли#/$
+if E0=46 then proc V4
+if K6>=0 then p Атака:#T6$
+if K6=0 then proc R8
+if E0=46 then pln 
+T3=0
+if I3>0 then T3=10&proc Q4
+if T3>0 then p #/$&proc C6
+if T3>0 then proc S3
+if T3>0 then proc P4
+if T3>0 and K6>=0 then p  Атака:#U6$#$
+if T3>0 and K6>=0 then proc S8
+if T3>0 and K6>=0 then pln 
+K6=-1
+B3=0
+proc C3
+C7=B3+G5
+
+T6=C7
+B3=2
+C7=B3
+
+O8=C7
+if R3=0 then textalign=3&image dragon/img5.JPG
+textalign=1
+E0=46
+proc M6
+B3=2
+C7=B3
+
+Q8=C7
+B3=0
+proc C3
+C7=B3+D5
+
+U6=C7
+if I3>0 and R3=0 then btn J6,Атака
+if I3=0 then if R3=0 then btn M0,<1> Победа
+if I3>0 then proc Q3
+end
+
+:M8
+V2=0
+I3=1
+K6=-1
+G6=10
+H3=6
+D5=5
+M4=K5
+proc J3
+end
+:N8
+if T6>U6 then N6=O8&H3=H3-N6&T3=1&proc P5
+end
+:P8
+if T6<U6 then N6=Q8&H4=H4-N6&if H4<0 then H4=0
+end
+:R8
+if T6>U6 then N6=O8&if N6>0 then p Нанес повреждение #N6$#$&if H3<=0 then p  Убил
+end
+:S8
+if T6<U6 then N6=Q8&p Нанес повреждение #N6$#$
+end
+:C3
+D3=0
+B3=B3+1
+E3=rnd*6
+if E3>1 then B3=B3+1
+if E3>2 then B3=B3+1
+if E3>3 then B3=B3+1
+if E3>4 then B3=B3+1
+if E3>5 then B3=B3+1
+if B3=6 then D3=1
+end
+:N4
+D3=0
+B3=B3+1
+E3=rnd*4
+if E3>1 then B3=B3+1
+if E3>2 then B3=B3+1
+if E3>3 then B3=B3+1
+if B3=4 then D3=1
+end
+:V7
+D3=0
+B3=B3-2
+E3=rnd*6
+if E3>1 then B3=B3-1
+if E3>2 then B3=B3-1
+if E3>3 then B3=B3-1
+if E3>4 then B3=B3-1
+if E3>5 then B3=B3-1
+E3=rnd*6
+if E3>1 then B3=B3-1
+if E3>2 then B3=B3-1
+if E3>3 then B3=B3-1
+if E3>4 then B3=B3-1
+if E3>5 then B3=B3-1
+if B3=12 then D3=1
+end
+:H8
+D3=0
+B3=B3+1
+E3=rnd*2
+if E3>1 then B3=B3+1
+if B3=2 then D3=1
+end

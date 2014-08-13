@@ -1,0 +1,1 @@
+keytool -keystore keystore -keypass iambookmaster -genkey -alias iambookmaster -validity 365

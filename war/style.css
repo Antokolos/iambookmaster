@@ -1,0 +1,218 @@
+* { 
+	padding: 0;
+	margin: 0;
+}
+
+body { 
+background: #414b68 url(angar/fd_body.gif) center;
+padding: 0;
+margin: auto;
+color: white;}
+p {font-size: 75%;font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif}
+
+h2 { text-transform: lowercase;color: #fff;}
+h3 {color: #6a83c7;border-bottom: 1px #5e5e5e solid;font-size: 85%;font-family: Trebuchet, Georgia;}
+
+li { 
+	color: #d2d2c7;	text-decoration: underline;
+}
+
+#wrap {	
+	margin: 0px auto;	width: 910px; background: #211d2b ;}
+td {
+	vertical-align: top;
+}
+
+
+#header {
+height: 225px;
+margin: 0;
+padding: 0;background-image: url(angar/head.jpg);}
+
+#header h1 { margin: 0; padding-left: 1px; padding-top: 12px; font-size:95%;; color: white; }
+#header h2 { margin: 0; padding-left: 45px; padding-top: 2px;color: #fff;margin-top: 40px;text-align: left;text-indent: 205px;font-size: 80%;}
+
+.my_button { 
+color: #FFF;
+text-decoration: none;
+line-height: 22px;margin-right: 10px;
+} 
+#left { 
+font: 70% "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+width: 200px;
+padding: 0px;display: block;visibility: inherit;float: left;
+height: 10px;text-transform: uppercase;margin-left: 5px;}
+
+li { list-style-type: none; border-bottom: 1px dotted #fff;padding-left: 0px;background-color: #46516e;margin-top: 2px;
+text-decoration: none;display:block; min-height:1.5em /*Non-IE6*/; height:auto !important; height:1.5em /*IE6*/; line-height:1.5em; padding:0px 10px 0px 40px; border:none; font-weight:normal; text-decoration:none; color: rgb(255,255,255);
+}
+
+.footer {
+color: gray;
+clear:both; 
+width:910px;
+height: 23px;
+margin: 0;
+padding: 0;background-color: #fff;background-image: url(angar/fd_btn_hover.gif);text-align: center;}
+.footer a {color: #000;}
+.col1 {width: 650px; margin-bottom:5px /*IE6*/;text-align: justify;}
+
+a {
+	color: white;
+}
+.img {border: none;}
+
+
+
+.ext_button_disabled {
+	color: black;
+}
+
+.ext_button_on {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.ext_button_off {
+	color: gray;
+	cursor: pointer;
+	cursor: hand;
+}
+
+
+/* ================ Player ================== */
+.clickable {
+  cursor: pointer;
+  cursor: hand;
+}
+  
+.filler {
+	font-size: 1px;
+}
+
+.player_error {
+	color: red;
+	font-size: bigger;
+}
+.player_about {
+	margin-left: 5px;
+}
+.playerAboutPanel {
+	padding: 5px;
+}
+.playerTitle {
+	font-weight: bold;
+	font-size: bigger;
+}
+.playerAuthor {
+	font-size: smaller;
+}
+.playerDescription {
+	border-bottom: 1px solid gray;
+}
+.playerOldVer{
+	color: red;
+}
+.bag_item_mark {
+	font-weight: bold;
+	color: red;
+	background-color: yellow;
+}
+
+.bag_item_selected {
+}
+.bag_title {
+	font-weight: bold;
+}
+.bag {
+}
+.player_text_panel {
+	border-right: 1px solid black;
+}
+.player_text_message {
+}
+.new_version_text {
+	border: 1px solid red;
+	padding: 5px;
+	background-color: #C3D9FF;
+}
+.greeting_icon {
+}
+.greeting_name {
+}
+.greeting_text{
+}
+.greeting {
+	cursor: default;
+	border :0px;
+}
+/* text of the book */
+.player_text {
+	line-height: 130%;
+	text-align: justify;
+}
+.hasBorder {
+  border: 1px solid gray;
+}
+.feedback_row{
+  border-bottom: 1px solid gray;
+}
+.maskPanel {
+	background-color: #C3D9FF;
+	opacity:.6;-moz-opacity:.6;filter:alpha(opacity=60);
+	z-index: 3000;
+}
+.maskPanelIn {
+  border: medium inset gray;
+}
+.small_text {
+	font-size: 10px;
+}
+
+.modificators_panel {
+  border-top: 1px solid black;
+}
+.parameters_panel {
+  border-bottom: 1px solid black;
+}
+.battle_panel {
+  border: 1px solid red;
+}
+
+.battle_npc_dead{
+	text-decoration: line-through;
+}
+
+.hero_list_param {
+	margin-left: 5px;
+}
+
+.param_animation {
+	font-weight: bold;
+	color: red;
+}
+
+.image_disabled{
+	opacity: .3;
+	filter: alpha(opacity=30);
+  	cursor: default;
+}
+.modificator{
+	margin-left: 5px;
+}
+.bag_item {
+	margin-left: 5px;
+}
+.battle_message{
+	margin-left: 5px;
+	font-size: smaller;
+}
+
+.book_rules{
+}
+
+.inventory {
+	width: 200px;
+	height: 100%;
+}
+

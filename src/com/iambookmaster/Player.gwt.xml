@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 1.6.4//EN" "http://google-web-toolkit.googlecode.com/svn/tags/1.6.4/distro-source/core/src/gwt-module.dtd">
+<module rename-to="Player">
+
+	<inherits name='com.google.gwt.user.User'/>
+	<inherits name='com.iambookmaster.client.player.layout.ViewerLayout'/>
+	
+	<extend-property name="locale" values="ru"/>
+	<set-property-fallback name="locale" value="ru"/>
+	<set-property name="locale" value="ru"/>
+	
+	<!-- Inherit the core Web Toolkit stuff.  -->
+    <entry-point class='com.iambookmaster.client.viewer.Viewer'/>
+	<source path="client/beans"/>
+	<source path="client/common"/>
+	<source path="client/exceptions"/>
+	<source path="client/player"/>
+	<source path="client/locale"/>
+	<source path="client/model"/>
+	<source path="client/viewer"/>
+	
+</module>

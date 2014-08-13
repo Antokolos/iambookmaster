@@ -1,0 +1,775 @@
+body {
+	background-color: #C3D9FF;
+	color: black;
+	font-family: Arial, sans-serif;
+	margin: 0px 0px 0px 0px;
+}
+
+.align_top{
+	vertical-align:text-top;
+}
+	
+.spilit_panel_table {
+	height: 100%;
+	width: 100%;
+	margin-left: 2x;
+	margin-right: 2px;
+	border-collapse: collapse;
+	cursor: e-resize;
+	font-size: 1px;
+}
+
+.spilit_panel_sub_table {
+	height: 100%;
+	width: 3px;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	font-size: 1px;
+	cursor: e-resize;
+}
+
+.split_panel_ver_table {
+	height: 5px;
+	width: 100%;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	border-collapse: collapse;
+	cursor: n-resize;
+	font-size: 1px;
+	padding: 0px;
+}
+
+.split_panel_sub_ver_table {
+	width: 100%;
+	height: 3px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	font-size: 1px;
+	cursor: n-resize;
+}
+
+.notes_panel_header_inside {
+	font-weight: bold;
+	padding-top:2px;
+	padding-bottom:2px;
+	padding-left:0px;
+	padding-right:3px;
+	vertical-align: middle;
+}
+
+.notes_panel_header_left {
+	height: 100%;
+	height: 100%;
+	margin-bottom:-1px;
+}
+.notes_panel_header_right {
+}
+
+.notes_panel_header {
+	font-size: smaller;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.notes_panel_header_highlight {
+	font-weight: bold;
+	font-size: smaller;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.notes_panel_header_sel {
+	font-size: smaller;
+	cursor: default;
+}
+
+.editor_panel {
+  background-color: #C3D9FF;
+}
+.location_editor_panel {
+  background-color: #C3D9FF;
+}
+.map_widget {
+	background-color: #C3D9FF;
+	border: 1px solid black;
+	font-size: 12px;
+}
+.map_widget_selected {
+	background-color: #E8EEF7;
+	border: 1px solid red;
+	font-size: 12px;
+}
+
+.quick_panel {
+  background-color: lightgray;
+}
+
+.found_text {
+	background-color: white;
+	color: red;
+	font-weight: bold;
+}
+
+.location_list {
+	background-color: #C3D9FF;
+}
+.settings_list {
+	background-color: #C3D9FF;
+	font-size: smaller;
+}
+.objects_list {
+	background-color: #C3D9FF;
+}
+
+.location_list_item_selected {
+	border-bottom: 1px dotted black;
+	background-color: #E8EEF7;
+	cursor: pointer;
+	cursor: hand;
+}
+.location_list_filler{
+	font-size: 1px;
+	cursor: default;
+}
+
+.paragraph_map_final {
+	margin-right: 3px;
+	color: green;
+}
+.paragraph_map_draft {
+	margin-right: 3px;
+	color: red;
+}
+.paragraph_map_prop {
+	margin-right: 3px;
+	color: black;
+}
+
+.loc_status_final {
+	cursor: pointer;
+	cursor: hand;
+	border-bottom: 1px dotted black;
+	color: green;
+}
+
+.cursor_move {
+	cursor: move;
+}
+.loc_status_draft {
+	cursor: pointer;
+	cursor: hand;
+	border-bottom: 1px dotted black;
+	color: red;
+}
+.loc_status_prop {
+	cursor: pointer;
+	cursor: hand;
+	border-bottom: 1px dotted black;
+	color: black;
+}
+
+.mark_bold {
+	font-weight: bold;
+	font-size: smaller;
+}
+
+.prev_two_way {
+	font-size: smaller;
+	border: 3px double black;
+}
+.prev_one_way {
+	font-size: smaller;
+	border: 1px solid black;
+}
+.prev_condition {
+	font-size: smaller;
+	border: 1px dotted black;
+}
+
+.paragraph_edit_title{
+	background-color: #C3D9FF;
+	border-bottom: 1px solid black;
+}
+.paragraph_edit_prev{
+	background-color: white;
+}
+.paragraph_edit_content_box {
+}
+.paragraph_edit_text {
+	font-size: smaller;
+}
+
+.validation_line_end{
+	border-bottom: 1px solid black;
+}
+.validation_line{
+}
+
+.reader_separator {
+	background-color: #C3D9FF;
+	border-bottom: 1px solid black;
+}
+.reader_paragraph {
+	border-bottom: 1px solid black;
+}
+.reader_text {
+	border-left: 1px solid black;
+	margin-left: 2px;
+}
+.reader_error {
+	color: red;
+	font-weight: bold;
+	border-bottom: 1px solid black;
+}
+
+.exchangePanel {
+	background-color: #C3D9FF;
+	border: 2px solid blue;
+	z-index: 1000;
+}
+
+.settings_separator {
+	border-bottom: 1px solid blue;
+}
+.settings_selected {
+	background-color: #E8EEF7;
+	font-weight: bold;
+	cursor: default;
+}
+.settings_normal {
+	cursor: pointer;
+	cursor: hand;
+}
+.map_editor_dnd {
+	padding: 0px;
+	margin: 0px;
+	background-color: #C3D9FF;
+}
+.tab_label {
+	margin-right: 3px;
+	font-weight: bold;
+}
+.margingRight5 {
+	margin-right: 5px;
+}
+.greeting_edit {
+	border-top: 2px solid blue;
+}
+
+.input_par {
+	border: 1px solid green;
+}
+.input_par_num {
+	background-color: #E8EEF7;
+	font-weight: bold;
+}
+.validator_par_number {
+	background-color: #E8EEF7;
+	font-weight: bold;
+}
+.validator_par_marked {
+	background-color: #D0D0D0;
+}
+.input_par_separator {
+	border-top: 1px solid green;
+}
+.import_par_type_sel {
+	border: 2px solid black;
+}
+.import_par_type_unsel {
+	cursor: pointer;
+	cursor: hand;
+	margin: 2px;
+}
+
+.zoom50 {
+	zoom: 50%;
+	-moz-transform: scale(0.5);
+	-webkit-transform: scale(0.5);
+}
+.zoom60 {
+	zoom: 60%;
+	-moz-transform: scale(0.60);
+	-webkit-transform: scale(0.5);
+}
+.zoom70 {
+	zoom: 70%;
+	-moz-transform: scale(0.70);
+	-webkit-transform: scale(0.7);
+}
+.zoom80 {
+	zoom: 80%;
+	-moz-transform: scale(0.8);
+	-webkit-transform: scale(0.8);
+}
+.zoom90 {
+	zoom: 90%;
+	-moz-transform: scale(0.9);
+	-webkit-transform: scale(0.9);
+}
+.zoomNo {
+}
+
+
+
+/* ================ Player ================== */
+.clickable {
+  cursor: pointer;
+  cursor: hand;
+}
+  
+.filler {
+	font-size: 1px;
+}
+
+.player_disable_graph {
+	background: url(imagesPlay/image-x-generic.png);
+}
+.player_error {
+	color: red;
+	font-size: bigger;
+}
+.player_about {
+	margin-left: 5px;
+}
+.playerAboutPanel {
+	padding: 5px;
+	background-color: #C3D9FF;
+	border: 2px solid blue;
+}
+.playerTitle {
+	font-weight: bold;
+	font-size: bigger;
+}
+.playerAuthor {
+	font-size: smaller;
+}
+.playerDescription {
+	border-top: 1px solid blue;
+	border-bottom: 1px solid blue;
+}
+.playerOldVer{
+	color: red;
+}
+.bag_item_mark {
+	font-weight: bold;
+	color: red;
+	background-color: yellow;
+}
+
+.bag_item_selected {
+}
+.bag_title {
+	font-weight: bold;
+}
+.bag {
+}
+.bag_popup {
+	border: 2px solid blue;
+	background-color: #C3D9FF;
+}
+.player_text_panel {
+	border-right: 1px solid black;
+}
+.player_text_message {
+}
+.new_version_text {
+	border: 1px solid red;
+	padding: 5px;
+	background-color: #C3D9FF;
+}
+.greeting_icon {
+}
+.greeting_name {
+}
+.greeting_text{
+}
+.greeting {
+	cursor: default;
+	border :0px;
+}
+/* text of the book */
+.player_text {
+	line-height: 130%;
+	text-align: justify;
+}
+.hasBorder {
+  border: 1px solid blue;
+}
+.feedback_row{
+  border-bottom: 1px solid blue;
+}
+.maskPanel {
+	background-color: #C3D9FF;
+	opacity:.6;-moz-opacity:.6;filter:alpha(opacity=60);
+	z-index: 3000;
+}
+.maskPanelIn {
+  border: medium inset blue;
+}
+.small_text {
+	font-size: 10px;
+}
+
+.modificators_panel {
+  border-top: 1px solid black;
+}
+.parameters_panel {
+  border-bottom: 1px solid black;
+}
+.battle_panel {
+  border: 1px solid red;
+  padding: 5px;
+}
+
+.battle_npc_dead{
+	text-decoration: line-through;
+}
+.battle_npc_single{
+}
+
+.battle_npc_friend{
+	color: green;
+	font-weight: bold;
+}
+
+.battle_npc_selected{
+	border: 2px dotted red; 
+	padding: 5px;
+	margin: 5px;
+}
+.battle_npc_unselected{
+	padding: 6px;
+	margin: 5px;
+	border: 1px dotted gray; 
+	cursor: pointer;
+  	cursor: hand;
+}
+
+.battle_npc_nonavailable{
+	padding: 6px;
+	margin: 5px;
+	border: 1px dotted gray; 
+	cursor: default;
+	color: gray;
+}
+
+.battle_alchemy_link {
+	margin-right: 10px;
+}
+.hero_list_param {
+	margin-left: 5px;
+}
+
+.param_animation {
+	font-weight: bold;
+	color: red;
+}
+
+.image_disabled{
+	opacity: .3;
+	filter: alpha(opacity=30);
+  	cursor: default;
+}
+.modificator{
+	margin-left: 5px;
+}
+.bag_item {
+	margin-left: 5px;
+}
+.battle_message{
+	margin-left: 5px;
+	font-size: smaller;
+}
+
+.book_rules{
+}
+
+.ext_button_enabled {
+	color: black;
+	font-weight: bold;
+}
+
+.ext_button_disabled {
+	color: gray;
+	font-weight: normal;
+}
+
+.battle_hero {
+}
+
+.battle_hero_inactive {
+	color: gray;
+}
+
+.battle_hero_dead{
+	text-decoration: line-through;
+	color: red;
+}
+.battle_parameter_name{
+	margin-left: 10px;
+}
+.battle_parameter_value{
+	margin-left: 3px;
+	font-weight: bold;
+}
+.alchemy_from_value{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+/*---------------------------- iPhone emulator ---------------------------*/
+.iambm_book {
+	width: 100%;
+	height: 100%;
+}
+
+.iambm_main{
+}
+
+.iambm_log{
+	border: 2px solid red;
+	background: white;
+	color: black;
+}
+
+.iambm_help_title {
+	font-style: italic;
+}
+
+.iambm_help {
+	margin-top: 10px;
+}
+.iambm_help_demo {
+	width: 70%;
+	margin-left: 10px;
+	margin-top: 10px;
+	border: 1px solid green;
+	background-color: #f8ebda;
+	padding: 5px;
+}
+.iambm_help_point{
+	margin-left: 10px;
+	color: white;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-right: 5px;
+	
+}
+.iambm_help_select {
+	border: 1px dotted white;
+	font-size: 25px;
+	color: white;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.iambm_help_single {
+	border: 1px dotted white;
+	font-size: large;
+	color: white;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 5px;
+	background-color: rgb(89,183,72);
+}
+.iambm_help_select1 {
+	background-color: rgb(89,183,72);
+}
+.iambm_help_select2 {
+	background-color: rgb(80,166,175);
+}
+.iambm_help_select3 {
+	background-color: rgb(159,163,92);
+}
+		/* REQUIRED BUTTON STYLES: */		
+		button { 
+			position: relative;
+			border: 0; 
+			padding: 0;
+			cursor: pointer;
+			overflow: visible; /* removes extra side padding in IE */
+			margin-bottom:5px;
+		}
+
+		button::-moz-focus-inner {
+			border: none;  /* overrides extra padding in Firefox */
+		}
+
+		button div { 
+			position: relative;
+			display: block; 
+			white-space: nowrap;	
+			vertical-align: middle;
+		}
+
+		button div div{ 
+			display: inline;
+			padding-right:5px;
+			padding-left: 5px;
+			font-size: 30px;
+			vertical-align: middle;
+			font-weight: bold;
+		}
+
+		button > div > div:empty {
+			padding-right:0px;
+			padding-left:0px;
+			font-size: 1px;
+		}
+
+		@media screen and (-webkit-min-device-pixel-ratio:0) {
+			/* Safari and Google Chrome only - fix margins */
+			button div {
+				margin-top: -1px;
+			}
+		}
+
+
+		/* OPTIONAL BUTTON STYLES for applying custom look and feel: */		
+		button.btnCommon {
+			padding: 0 15px 0 0; 
+			margin-right:5px; 
+			font-size:20px; 
+			text-align: center; 
+		}
+
+		/* OPTIONAL BUTTON STYLES for applying custom look and feel: */		
+		button.btnGame {
+			padding: 0 15px 0 0; 
+			margin-right:5px; 
+			text-align: center; 
+		}
+		
+		button.btnCommon:hover, button.btnCommonHover { /* the redundant class is used to apply the hover state with a script */
+			background-position: right -210px; 
+		}
+			
+		button.btnCommon:hover div, button.btnCommonHover div {
+			background-position: 0 -70px;
+		}
+
+		button.btnCommon > div {
+			padding: 13px 0 0 15px; 
+			height:37px; 
+			min-width:50px;
+		}
+
+		button.btnGame > div {
+			padding: 7px 0 0 5px; 
+			height:50px; 
+			min-width:40px;
+		}
+		
+		/* SPECIAL STYLES FOR DIFFERENT BUTTONS */
+
+		button.btnCommon {
+			background: transparent url(imagesPlay/btn_blue_sprite.gif) no-repeat right -140px; 
+		}
+
+		button.btnCommon > div {
+			background: transparent url(imagesPlay/btn_blue_sprite.gif) no-repeat left top; 
+			color:#fff; 
+		}
+
+		button.btnGame1 {
+			background: transparent url(imagesPlay/btn_red_sprite.gif) no-repeat right -140px; 
+		}
+
+		button.btnGame1 > div {
+			background: transparent url(imagesPlay/btn_red_sprite.gif) no-repeat left top; 
+			color:black; 
+		}
+
+		button.btnGame2 {
+			background: transparent url(imagesPlay/btn_green_sprite.gif) no-repeat right -140px; 
+		}
+
+		button.btnGame2 > div {
+			background: transparent url(imagesPlay/btn_green_sprite.gif) no-repeat left top; 
+			color:#fff; 
+		}
+
+		button.btnGame3 {
+			background: transparent url(imagesPlay/btn_brown_sprite.gif) no-repeat right -140px; 
+		}
+
+		button.btnGame3 > div {
+			background: transparent url(imagesPlay/btn_brown_sprite.gif) no-repeat left top; 
+			color:#fff; 
+		}
+
+		button.btnGame4 {
+			background: transparent url(imagesPlay/btn_gold_sprite.gif) no-repeat right -140px; 
+		}
+
+		button.btnGame4 > div {
+			background: transparent url(imagesPlay/btn_gold_sprite.gif) no-repeat left top; 
+			color:#fff; 
+		}
+
+		button.btnGame5 {
+			background: transparent url(imagesPlay/btn_metallic_sprite.gif) no-repeat right -140px; 
+		}
+
+		button.btnGame5 > div {
+			background: transparent url(imagesPlay/btn_metallic_sprite.gif) no-repeat left top; 
+			color:#fff; 
+		}
+
+		button.btnGame6 {
+			background: transparent url(imagesPlay/btn_purple_sprite.gif) no-repeat right -140px; 
+		}
+
+		button.btnGame6 > div {
+			background: transparent url(imagesPlay/btn_purple_sprite.gif) no-repeat left top; 
+			color:#fff; 
+		}
+
+		button.btnGame7 {
+			background: transparent url(imagesPlay/btn_sea_sprite.gif) no-repeat right -140px; 
+		}
+
+		button.btnGame7 > div {
+			background: transparent url(imagesPlay/btn_sea_sprite.gif) no-repeat left top; 
+			color:#fff; 
+		}
+
+		button.btnGame8 {
+			background: transparent url(imagesPlay/btn_yellow_sprite.gif) no-repeat right -140px; 
+		}
+
+		button.btnGame8 > div {
+			background: transparent url(imagesPlay/btn_yellow_sprite.gif) no-repeat left top; 
+			color:#fff; 
+		}
+
+		/* INLINE NUMBER STYLES */
+
+		button.btnGame1 > div div {
+			color:yellow; 
+			font-family:'Courier New';
+			font-weight:bold;
+		}
+
+		button.btnGame8 > div > div {
+			color:red; 
+			font-family:'Impact';
+			font-weight:bold;
+		}
+
+
+.mainStyleBook {
+	column-width: 300px;
+	-webkit-column-width: 300px;
+	-moz-column-width: 300px;
+		
+	column-gap: 20px;	
+	-webkit-column-gap: 20px;	
+	-moz-column-gap: 20px;
+}
+
+/* end of iPhone emulator*/
+
+
+

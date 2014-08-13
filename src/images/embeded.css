@@ -1,0 +1,484 @@
+
+.canvasHorizontal {
+	float: left;
+}
+
+.canvasVertical {
+	display:block;
+	width: 100%;
+}
+
+.buttonDisabled {
+	opacity:0.3;
+	cursor: default;
+}
+
+.buttonNormal {
+	cursor: pointer;
+	cursor: hand;
+	margin: 10px;
+}
+.filler {
+	font-size: 1px;
+}
+
+.playListTitle {
+	font-weight: bold;
+	font-size: large;
+	text-align: center;
+}
+
+.playListItemsTitle {
+}
+
+.playListParameter {
+	padding-right: 15px;
+}
+
+.playListParameterValue {
+	font-weight: bold;
+	margin-left: 2px;
+}
+
+@if user.agent safari {
+	.playListObjectPassive {
+		background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#D0D0D0));
+	}
+}
+@if user.agent gecko1_8 {
+	.playListObjectPassive {
+		background: -moz-linear-gradient(top,  #FFFFFF,  #D0D0D0);
+	}
+}
+
+.flatButton {
+	margin: 5px;
+	padding: 10px;
+	background-color: rgb(200,200,200);
+	font-size: 120%;
+	cursor: pointer;
+	cursor: hand;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.playListObjectPassive{
+	margin: 5px;
+	padding: 5px;
+	background-color: rgb(200,200,200);
+	font-size: large;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+@if user.agent safari {
+	.playListObject {
+		background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#D0D0D0));
+	}
+}
+@if user.agent gecko1_8 {
+	.playListObject {
+		background: -moz-linear-gradient(top,  #FFFFFF,  #D0D0D0);
+	}
+}
+.playListObject {
+	margin: 5px;
+	padding: 10px;
+	background-color: rgb(200,200,200);
+	font-size: large;
+	cursor: pointer;
+	cursor: hand;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.feedbackUnselected {
+	cursor: pointer;
+	cursor: hand;
+	opacity:0.7;
+}
+
+.feedbackSelected{
+	border: 2px dotted red;
+}
+
+.helpPanel{
+}
+
+.errorPanel {
+	background: #FF3333;
+}
+
+.loadPanelBean {
+	border-top: 1px solid black;
+}
+.loadPanelBeanOdd {
+	border-top: 1px solid black;
+	background: #AAAAAA;
+}
+
+.toolBarStyle {
+}
+
+.mainStyle {
+	text-align: justify;
+	display: inline-block;
+}
+
+.mainStyleIPad {
+	text-align: justify;
+	width: 2000px;
+}
+
+.choice {
+	color: white;
+	font-weight: bold;
+}
+
+
+.choiceNormal {
+	color: white;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-right: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.choiceDisabled {
+	color: gray;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.pageCorner {
+	font-size: 1px;
+	border-left: 1px solid black;
+	border-top: 1px solid black;
+}
+
+.mainMenuCellIcon {
+	height: 40px;
+	margin-top: 20px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.mainMenuCellText {
+	height: 40px;
+	vertical-align: center;
+}
+
+.choiceTitle {
+	margin-top: 10px;
+	font-weight: bold;
+}
+/*
+.choiceBigWidget {
+	font-size: 40px;
+	color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+	cursor: pointer;
+	cursor: hand;
+	font-weight: bold;
+}
+.choiceBigWidgetBorder {
+	border: 1px dotted gray;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+.choiceBigWidgetText {
+	font-size: medium;
+	color: black;
+	padding-left: 3px;
+	padding-right: 3px;
+	cursor: pointer;
+	cursor: hand;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+*/
+.choiceBigWidgetNoText {
+	border: 1px dotted gray;
+	font-size: 40px;
+	color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	cursor: pointer;
+	cursor: hand;
+	font-weight: bold;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.bookName {
+	text-align:center;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.bookAuthors {
+	text-align: right;
+	font-style: italic;
+}
+
+.audioStateSelected {
+	border: 3px dotted black;
+	margin: 10px;
+	cursor: pointer;
+	cursor: hand;
+}
+.audioStateNonSelected {
+	border: 1px dotted gray;
+	margin: 12px;
+	cursor: pointer;
+	cursor: hand;
+}
+.bookDescription {
+	border-top: 1px dotted gray;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.bookDemoVersion {
+	margin: 5px;
+	font-style: italic;
+}
+.greetingPanel {
+	border: 1px dotted gray;
+	margin-top: 5px;
+}
+.greetingIcon {
+}
+.greetingName {
+	font-weight: bold;
+}
+.greetingText {
+}
+.greetingTitle {
+	margin-top: 5px;
+}
+.greetingClickable{
+	cursor: pointer;
+	cursor: hand;
+}
+.greetingClickableHyper{
+	padding-top: 10px;
+	text-decoration: underline;
+	color: blue;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.feedbackInstructions {
+	border: 1px dotted gray;
+	margin-top: 5px;
+}
+
+.adventureListNote {
+	border: 1px solid green;
+	background-color: #f8ebda;
+	padding: 5px;
+	display: inline-block;
+}
+
+.battleNPCDead {
+	
+}
+
+.battleNpcName{
+	display: inline-block;
+	font-weight: bold;
+}
+
+.battleHeroInactive {
+	display: inline-block;
+	color: gray;
+}
+
+.battleNpcParameterName{
+	margin-left: 10px;
+	display: inline-block;
+	font-size: smaller;
+	font-weight: normal;
+}
+.battleNpcParameterValue{
+	margin-left: 3px;
+	display: inline-block;
+	font-weight: bold;
+}
+.battleTitle{
+	font-size: 20px;
+	text-align: center;
+}
+
+.battleFighterWidgetNonAvalalble {
+	margin-top:5px;
+	color: #C0C0C0;
+}
+
+.battleFighterWidget {
+	margin-top:5px;
+}
+
+.battleFriendWidget {
+	margin-top:5px;
+	/*padding: 5px;*/
+	color: green;
+	font-weight: bold;
+}
+
+.battleFighterWidgetSelected{
+	margin-top:5px;
+	/*padding: 5px;*/
+	border: 3px dotted red;
+}
+.battleFighterWidgetUnselected{
+	margin-top:5px;
+	border: 1px dotted gray;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.battleNpcNameUnselected {
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.battleFighterDead {
+	display: inline-block;
+	font-weight: bold;
+	background-position: center;
+	background-repeat: repeat-x;
+}
+@if (com.iambookmaster.client.iphone.common.IPhoneTouchProvider.noImagesPath()) {
+	.battleFighterDead{
+		background-image: url(redline.png);
+	}
+} @else {
+	.battleFighterDead{
+		background-image: url(imagesPlay/redline.png);
+	}
+}
+
+.battleFighterWidgetDead {
+	margin-top:5px;
+	/*padding: 5px;*/
+}
+
+.battlePanel {
+	border-top: 1px dotted gray;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-bottom: 1px dotted gray;
+}
+.battleMessage {
+}
+.battleMessage b {
+}
+.battleMessage i {
+	font-style: normal;
+	color: red;
+}
+
+.battleMessageFirst{
+	border-top: 1px dotted gray;
+	font-style: italic;
+}
+.alchemyFromValue{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.menuItem{
+	margin: 5px;
+}
+.menuItemPressed{
+	margin-top: 8px;
+	margin-bottom: 2px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+@if (com.iambookmaster.client.iphone.common.IPhoneTouchProvider.noImagesPath()) {
+	.menuItemLeft{
+		padding-left: 21px;
+		background: url(buttonBigLeft.png) no-repeat left top;
+	}
+	.menuItemRight{
+		padding-right: 19px;
+		background: url(buttonBigRight.png) no-repeat right top;
+	}
+	.menuItemCenter{
+		padding-top: 15px;
+		background: url(buttonBigCenter.png) left top;
+		font-size: 30px;
+		color: white;
+		cursor: pointer;
+		cursor: hand;
+		height: 60px;
+	}
+} @else {
+	.menuItemLeft{
+		padding-left: 21px;
+		background: url(imagesPlay/buttonBigLeft.png) no-repeat left top;
+	}
+	.menuItemRight{
+		padding-right: 19px;
+		background: url(imagesPlay/buttonBigRight.png) no-repeat right top;
+	}
+	.menuItemCenter{
+		padding-top: 15px;
+		background: url(imagesPlay/buttonBigCenter.png) left top;
+		font-size: 30px;
+		color: white;
+		cursor: pointer;
+		cursor: hand;
+		height: 60px;
+	}
+}
+
+.feedbackDescription{
+	margin-top: 10px;
+}
+
+.thankyouTitle {
+	margin-top: 5px;
+	border-top: 1px dotted black;
+	margin-bottom: 5px;
+}
+.thankyouTitleError {
+	margin-top: 5px;
+	border-top: 1px dotted black;
+	margin-bottom: 5px;
+	color: red;
+}
+.thankyouBottom{
+	margin-bottom: 5px;
+}
+.thanksTitleImage{
+}
+.urqTitle{
+	margin: 5px;
+	text-align: center;
+	color: black;
+	font-size: 40px;
+	font-weight: bold;
+}
+.urqScreenTitle {
+	text-align: center;
+	font-size: large;
+	font-weight: bold;
+}
+.urqProgressBar{
+	font-size: 1px;
+	background-color: green;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	margin-top: 10px;
+	height: 15px;
+	
+}

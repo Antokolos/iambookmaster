@@ -1,0 +1,16 @@
+<module>
+	<inherits name="com.google.gwt.core.Core"/>
+	<inherits name="com.google.gwt.user.UserAgent"/>
+
+	<!-- Fall through to this rule for all normal browsers. -->
+	<replace-with class="com.iambookmaster.client.player.layout.ViewerLayoutImplStandard">
+		<when-type-is class="com.iambookmaster.client.player.layout.ViewerLayoutImpl"/>
+	</replace-with>
+
+  <!-- Opera has a different implementation. -->
+	<replace-with class="com.iambookmaster.client.player.layout.ViewerLayoutImpOpera">
+		<when-type-is class="com.iambookmaster.client.player.layout.ViewerLayoutImpl"/>
+		<when-property-is name="user.agent" value="opera"/>
+	</replace-with>
+
+</module>

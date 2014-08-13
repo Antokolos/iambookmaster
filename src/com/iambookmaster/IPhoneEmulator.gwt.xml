@@ -1,0 +1,36 @@
+<module>
+	<!-- 
+	<replace-with class="com.iambookmaster.client.iphone.IPhoneFileService">
+		<when-type-is class="com.iambookmaster.client.iphone.IPhoneDataService"/>
+	</replace-with>
+	 -->
+	<replace-with class="com.iambookmaster.client.player.ContentPlayerImpl">
+		<when-type-is class="com.iambookmaster.client.model.ContentPlayer"/>
+	</replace-with>
+	
+	<replace-with class="com.iambookmaster.client.iphone.data.IPhoneDataServiceStub">
+		<when-type-is class="com.iambookmaster.client.iphone.data.IPhoneDataService"/>
+	</replace-with>
+	
+	<replace-with class="com.iambookmaster.client.iphone.editor.IPhoneModelLoaderStub">
+		<when-type-is class="com.iambookmaster.client.iphone.editor.IPhoneModelLoader"/>
+	</replace-with>
+
+	<replace-with class="com.iambookmaster.client.iphone.common.IPhoneTouchProviderNormal">
+		<when-type-is class="com.iambookmaster.client.iphone.common.IPhoneTouchProvider"/>
+	</replace-with>
+	
+	<!-- Special for Microsoft -->
+	<replace-with class="com.iambookmaster.client.iphone.common.IPhoneTouchProviderIE">
+		<when-type-is class="com.iambookmaster.client.iphone.common.IPhoneTouchProvider"/>
+		<when-property-is name="user.agent" value="ie6"/>
+	</replace-with>
+	<replace-with class="com.iambookmaster.client.iphone.common.IPhoneTouchProviderIE">
+		<when-type-is class="com.iambookmaster.client.iphone.common.IPhoneTouchProvider"/>
+		<when-property-is name="user.agent" value="ie8"/>
+	</replace-with>
+	<inherits name="com.google.gwt.user.AsyncProxy"/>
+	<inherits name="com.google.gwt.event.dom.DomEvent"/>
+	<inherits name="com.google.gwt.event.dom.DomEvent"/>
+	<inherits name="com.google.code.gwt.database.Html5Database"/>
+</module>

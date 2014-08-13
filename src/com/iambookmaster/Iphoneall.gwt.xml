@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 1.6.4//EN" "http://google-web-toolkit.googlecode.com/svn/tags/1.6.4/distro-source/core/src/gwt-module.dtd">
+<module rename-to='Iphoneall'>
+
+	<!-- Inherit the core Web Toolkit stuff.  -->
+	<inherits name='com.google.gwt.user.User'/>
+	<inherits name='com.iambookmaster.client.player.layout.ViewerLayout'/>
+	<inherits name="com.google.code.gwt.database.Html5Database" />
+	<inherits name="com.iambookmaster.IPhoneEmulator" />
+	
+	<extend-property name="locale" values="en"/>
+	<set-property-fallback name="locale" value="en"/>
+	
+    <entry-point class='com.iambookmaster.client.iphone.IPhoneViewerOldBook'/>
+	<source path="client/beans"/>
+	<source path="client/common"/>
+	<source path="client/exceptions"/>
+	<source path="client/player"/>
+	<source path="client/locale"/>
+	<source path="client/model"/>
+	<source path="client/iphone"/>
+
+</module>
