@@ -21,13 +21,13 @@ public class IPhoneDataServiceStub extends IPhoneDataService {
 
 	private static final String STATE_FILE = "/_last_emulator_game_state.save";
 	
-	private IPhoneDBDataService service;
+///	private IPhoneDBDataService service;
 
 	private String data;
 
 	private static String basePath;
 	public IPhoneDataServiceStub() {
-		if (Database.isSupported()) {
+/*		if (Database.isSupported()) {
 			service = GWT.create(IPhoneDBDataService.class);
 			service.initTable(new VoidCallback() {
 				public void onFailure(DataServiceException error) {
@@ -38,7 +38,7 @@ public class IPhoneDataServiceStub extends IPhoneDataService {
 					//ok
 				}
 			});
-		}
+		}*/
 	}
 	
 

@@ -95,7 +95,8 @@ public class Player extends HorizontalPanel implements EditorTab,EditorPlayer {
 	private String feedbackURL=Base64Coder.decodeString("bWFpbHRvOmlhbWJvb2ttYXN0ZXJAZ21haWwuY29t");
 	private boolean authorHasOtherBooks;
 	private Timer feedbackAnimator;
-	private String allBooksURL="http://www.iambookmaster.com/";
+//	private String allBooksURL="http://www.iambookmaster.com/";
+	private String allBooksURL="http://localhost:8080/iambookmaster";
 	private BattlePanel battlePanel;
 	private FlowPanel textParagraphPanel;
 	private ClickHandler mainClickHandler;

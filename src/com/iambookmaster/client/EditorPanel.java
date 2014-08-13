@@ -254,6 +254,7 @@ public class EditorPanel extends VerticalPanel{
 				break;
 			case PLAYER_IPHONE:
 				player = new IPhonePlayerWrapper(model,listener,480,320);
+				
 				break;
 			case PLAYER_1024X600:
 				player = new IPadPlayerWrapper(model,listener,1024,600);

@@ -82,7 +82,8 @@ public class AboutPanel extends PopupPanel{
 	public void centerAndShow(int maj, int min) {
 		title.setText(appMessages.getAboutTitle(maj,min));
 		centerAndShow();
-		frame.setUrl("http://www.iambookmaster.com"+"/"+"remote/"+appConstants.locale() +"/"+maj+"_"+min+"/about.html");
+//		frame.setUrl("http://www.iambookmaster.com"+"/"+"remote/"+appConstants.locale() +"/"+maj+"_"+min+"/about.html");
+		frame.setUrl("http://localhost:8080/iambookmaster"+"/"+"remote/"+appConstants.locale() +"/"+maj+"_"+min+"/about.html");
 	}
 	
 }

@@ -18,6 +18,7 @@ package com.iambookmaster.client.iphone.data;
 
 import java.util.Date;
 
+import com.google.code.gwt.database.client.Database;
 import com.google.code.gwt.database.client.service.Connection;
 import com.google.code.gwt.database.client.service.DataService;
 import com.google.code.gwt.database.client.service.ListCallback;
@@ -28,8 +29,9 @@ import com.google.code.gwt.database.client.service.Update;
 import com.google.code.gwt.database.client.service.VoidCallback;
 
 @Connection(name="iambookmaster", version="1.0", description="I am Book Master", maxsize=10000)
-public interface IPhoneDBDataService extends DataService {
+public class IPhoneDBDataService implements DataService {
 
+    public Database getDatabase() {return null;}
 	  /**
    * Makes sure that the 'saves' table exists in the Database.
    */
@@ -39,27 +41,27 @@ public interface IPhoneDBDataService extends DataService {
       	"name VARCHAR(256) NOT NULL, " +
       	"data CLOB NOT NULL," +
       	"stamp INTEGER NOT NULL)")
-  void initTable(VoidCallback callback);
+  public void initTable(VoidCallback callback) {}
 
   /**
    * Records a Click value, and obtains the ID of the inserted record.
    */
   @Update("INSERT INTO saves (gameId,name,data,stamp) VALUES ({saveGameId},{saveName},{saveData},{when.getTime()})")
-  void insertSave(String saveGameId, String saveName, String saveData, Date when, RowIdListCallback callback);
+  public void insertSave(String saveGameId, String saveName, String saveData, Date when, RowIdListCallback callback) {}
 
   /**
    * Returns all clicks.
    */
   @Select("SELECT id,gameId,name,data,stamp FROM saves WHERE gameId={saveGameId}")
-  void selectList(String saveGameId,ListCallback<IPhoneSaveGameBean> callback);
+  public void selectList(String saveGameId,ListCallback<IPhoneSaveGameBean> callback) {}
   
   /**
    * Obtains the number of clicks recorded in the database.
    */
   @Select("SELECT count(*) FROM saves WHERE gameId={saveGameId}")
-  void getClickCount(String saveGameId, ScalarCallback<Integer> callback);
+  public void getClickCount(String saveGameId, ScalarCallback<Integer> callback) {}
 
   @Update("DELETE FROM saves WHERE id={id}")
-  void deleteSave(int id, VoidCallback callback);
+  public void deleteSave(int id, VoidCallback callback) {}
   
 }

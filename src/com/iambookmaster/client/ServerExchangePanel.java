@@ -87,8 +87,8 @@ public class ServerExchangePanel extends VerticalPanel implements EditorTab {
 		String url;
 		if (GWT.isScript()) {
 			//for real
-//			url = "http://localhost:8080/";				
-			url = "http://iambookmaster.com/remote/";
+			url = "http://localhost:8080/iambookmaster/remote";				
+//			url = "http://iambookmaster.com/remote/";
 		} else {
 			//for debug
 			url = GWT.getHostPageBaseURL();

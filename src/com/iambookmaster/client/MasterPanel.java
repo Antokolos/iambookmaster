@@ -70,7 +70,8 @@ public class MasterPanel extends VerticalPanel {
 		DeferredCommand.addCommand(new Command() {
 			public void execute() {
 //				Encoded version of "http://www.iambookmaster.com/remote/status.js"
-				String url = Base64Coder.decodeString("aHR0cDovL3d3dy5pYW1ib29rbWFzdGVyLmNvbS9yZW1vdGUvc3RhdHVzLmpz")+"?time="+new Date().getTime();
+//				String url = Base64Coder.decodeString("aHR0cDovL3d3dy5pYW1ib29rbWFzdGVyLmNvbS9yZW1vdGUvc3RhdHVzLmpz")+"?time="+new Date().getTime();
+				String url = "http://localhost:8080/iambookmaster/remote/status.js"+"?time="+new Date().getTime();
 				check4updates(url,MasterPanel.this);
 			}
 		});

@@ -59,7 +59,8 @@ public class IPhoneFeedbackPanel implements Feedback {
 	}
 	private static String createURL(String key,Model model) {
 //		"http://www.iambookmaster.com/feedback?lang"
-		StringBuilder builder = new StringBuilder(Base64Coder.decodeString("aHR0cDovL3d3dy5pYW1ib29rbWFzdGVyLmNvbS9mZWVkYmFjaz9sYW5nPQ=="));
+//		StringBuilder builder = new StringBuilder(Base64Coder.decodeString("aHR0cDovL3d3dy5pYW1ib29rbWFzdGVyLmNvbS9mZWVkYmFjaz9sYW5nPQ=="));
+		StringBuilder builder = new StringBuilder("http://localhost:8080/iambookmaster/feedback?lang");
 		builder.append(appConstants.locale());
 		builder.append("&book=").append(model.getGameKey()==null ? model.getGameId() : model.getGameKey());
 		builder.append("&key=").append(key);

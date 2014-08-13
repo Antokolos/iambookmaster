@@ -1,13 +1,17 @@
-<project name="iambookmaster" default="deploy" basedir=".">
+<project name="iambookmaster" default="all" basedir=".">
 
 
     <!-- set global properties for this build -->
     <property name="src" value="src"/>
+    <property name="gwtlib" value="gwtlib"/>
     <property name="test" value="test"/>
     <property name="build" value="war"/>
     <property name="ready" value="build"/>
     <property file="build.properties"/>
     <property name="lib" value="war\WEB-INF\lib\"/>
+
+	<target name="all" depends="init,compile,compileTests,applet,GWTCompile,EditorRu,EditorEn,PlayerRu,PlayerEn,IURQRu,IURQAll,IPhoneRu">
+    </target>
 
 	<target name="init">
         <tstamp/>
@@ -104,13 +108,6 @@
     	<antcall target="zGWTCompile"/>
 	</target>
 	
-    <target name="deploy" description="Deploy application to GAE" >
-    	<exec dir="./" executable="${appengine.sdk}\bin\appcfg.cmd" >
-    		<arg value="update"/>
-    		<arg value="war"/>
-    		<arg value="--passin"/>
-    	</exec>
-    </target>
 	
     <target name="rollback" description="Rollback GAE">
     	<exec dir="./" executable="${appengine.sdk}\bin\appcfg.cmd" >
@@ -123,7 +120,7 @@
     	<delete failonerror="false">
     		<fileset  dir="${build}/iambookmaster" includes="*"/>
     	</delete>
-		<java classpath="${lib}/gwt-html5-database.jar;${gwt.compiler}\gwt-dev.jar;${gwt.compiler}\gwt-user.jar;${lib}/gwt-dnd-2.6.5.jar;${src};" classname="com.google.gwt.dev.Compiler" taskname="gwt-compile" failonerror="true" fork="true"  >
+		<java classpath="${lib}/gwt-html5-database.jar:${gwt.compiler}/gwt-dev.jar:${gwt.compiler}/gwt-user.jar:${lib}/gwt-dnd-3.3.1.jar:${src}:${gwtlib}/validation-api-1.0.0.GA.jar:${gwtlib}/validation-api-1.0.0.GA-sources.jar" classname="com.google.gwt.dev.Compiler" taskname="gwt-compile" failonerror="true" fork="true"  >
 		    <jvmarg value="-Xmx1G" />
 		    <jvmarg value="-Xss4096k"/>
 			<jvmarg value="-Xms64M"/>
@@ -139,7 +136,7 @@
     	<delete failonerror="false">
     		<fileset  dir="${build}/Player" includes="*"/>
     	</delete>
-		<java classpath="${gwt.compiler}\gwt-dev.jar;${gwt.compiler}\gwt-user.jar;${lib}/gwt-dragdrop-1.2.jar;${src}" classname="com.google.gwt.dev.Compiler" taskname="gwt-compile" failonerror="true" fork="true"  >
+		<java classpath="${gwt.compiler}/gwt-dev.jar:${gwt.compiler}/gwt-user.jar:${lib}/gwt-dragdrop-1.2.jar:${src}" classname="com.google.gwt.dev.Compiler" taskname="gwt-compile" failonerror="true" fork="true"  >
 		    <jvmarg value="-Xmx1G" />
 		    <jvmarg value="-Xss4096k"/>
 			<jvmarg value="-Xms64M"/>
@@ -240,7 +237,7 @@
     	<delete failonerror="false">
     		<fileset  dir="${build}/Iphone" includes="*"/>
     	</delete>
-		<java classpath="${lib}/gwt-html5-database.jar;${gwt.compiler}\gwt-dev.jar;${gwt.compiler}\gwt-user.jar;${src}" classname="com.google.gwt.dev.Compiler" taskname="gwt-compile" failonerror="true" fork="true"  >
+		<java classpath="${lib}/gwt-html5-database.jar:${gwt.compiler}\gwt-dev.jar:${gwt.compiler}\gwt-user.jar:${src}" classname="com.google.gwt.dev.Compiler" taskname="gwt-compile" failonerror="true" fork="true"  >
 		    <jvmarg value="-Xmx1G" />
 		    <jvmarg value="-Xss4096k"/>
 			<jvmarg value="-Xms64M"/>
@@ -277,7 +274,7 @@
     	<delete failonerror="false">
     		<fileset  dir="${build}/Iphone" includes="*"/>
     	</delete>
-		<java classpath="${lib}/gwt-html5-database.jar;${gwt.compiler}\gwt-dev.jar;${gwt.compiler}\gwt-user.jar;${src}" classname="com.google.gwt.dev.Compiler" taskname="gwt-compile" failonerror="true" fork="true"  >
+		<java classpath="${lib}/gwt-html5-database.jar:${gwt.compiler}\gwt-dev.jar:${gwt.compiler}\gwt-user.jar:${src}" classname="com.google.gwt.dev.Compiler" taskname="gwt-compile" failonerror="true" fork="true"  >
 		    <jvmarg value="-Xmx1G" />
 		    <jvmarg value="-Xss4096k"/>
 			<jvmarg value="-Xms64M"/>
@@ -285,6 +282,7 @@
 	    </java> 
 	</target>
 		
+
     <target name="zIPhoneBuild">
     	<delete dir="${ready}\iphone_${locale}" failonerror="false"/>
     	<delete file="${ready}\iphone_${locale}.zip" failonerror="false"/>

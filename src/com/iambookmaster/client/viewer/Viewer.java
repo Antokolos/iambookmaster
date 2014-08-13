@@ -164,7 +164,8 @@ public class Viewer implements EntryPoint {
 			feedbackURL = "/feedback.do";
 		} else {
 //			feedbackURL = "http://iambookmaster.appspot.com/feedback.do";
-			feedbackURL = "http://www.iambookmaster.com/remote/feedback.do";
+//			feedbackURL = "http://www.iambookmaster.com/remote/feedback.do";
+			feedbackURL = "http://localhost:8080/iambookmaster/remote/feedback.do";
 		}
 		DeferredCommand.addCommand(new Command() {
 			public void execute() {
@@ -356,7 +357,8 @@ public class Viewer implements EntryPoint {
 		
 		player.onResize();
 		//encoded version of "http://www.iambookmaster.com/remote/player.js?g="
-		String url = Base64Coder.decodeString("aHR0cDovL3d3dy5pYW1ib29rbWFzdGVyLmNvbS9yZW1vdGUvcGxheWVyLmpzP2c9");
+//		String url = Base64Coder.decodeString("aHR0cDovL3d3dy5pYW1ib29rbWFzdGVyLmNvbS9yZW1vdGUvcGxheWVyLmpzP2c9");
+		String url = "http://localhost:8080/iambookmaster/remote/player.js?g=";
 		check4updates(url+model.getGameId()+"&v="+model.getSettings().getGameVersion()+"&n="+Base64Coder.encodeString(JSONBuilder.encodeUTF2Esc(model.getSettings().getBookTitle()))+"&time="+new Date().getTime(),Viewer.this);
 		if (feedbackURL != null) {
 			player.enableFeedback(feedbackURL, otherBooks);

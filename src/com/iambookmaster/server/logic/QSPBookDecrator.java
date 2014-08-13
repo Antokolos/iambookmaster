@@ -14,6 +14,7 @@ import com.iambookmaster.client.beans.DiceValue;
 import com.iambookmaster.client.beans.Greeting;
 import com.iambookmaster.client.beans.Modificator;
 import com.iambookmaster.client.beans.NPC;
+import com.iambookmaster.client.beans.NPCParams;
 import com.iambookmaster.client.beans.ObjectBean;
 import com.iambookmaster.client.beans.Paragraph;
 import com.iambookmaster.client.beans.ParagraphConnection;
@@ -1388,7 +1389,8 @@ public class QSPBookDecrator implements BookDecorator {
 			buffer.append("=-1\n");
 			//add enemies
 			int counter = 0;
-			for (NPC npc : paragraph.getEnemies()) {
+			for (NPCParams npcParams : paragraph.getEnemies()) {
+				NPC npc = npcParams.getNpc();
 				//type of enemy
 				buffer.append(getID(VAR_ENEMY_PREFIX,counter));
 				buffer.append('=');
@@ -1422,7 +1424,8 @@ public class QSPBookDecrator implements BookDecorator {
 			
 			//battle rounds
 			counter = 0;
-			for (NPC npc : paragraph.getEnemies()) {
+			for (NPCParams npcParams : paragraph.getEnemies()) {
+				NPC npc = npcParams.getNpc();
 				//Hero attacks Enemies
 				buffer.append("if ");
 				buffer.append(getID(VAR_HERO_ATTACK_SELECTION));
@@ -1654,7 +1657,8 @@ public class QSPBookDecrator implements BookDecorator {
 			}
 			buffer.append("'\n");
 			int counter = 0;
-			for (@SuppressWarnings("unused") NPC npc : paragraph.getEnemies()) {
+			for (@SuppressWarnings("unused") NPCParams npcParams : paragraph.getEnemies()) {
+				NPC npc = npcParams.getNpc();
 				buffer.append("if ");
 				buffer.append(getID(VAR_HERO_ATTACK_SELECTION));
 				buffer.append('=');
@@ -1673,7 +1677,8 @@ public class QSPBookDecrator implements BookDecorator {
 //			buffer.append(" : *PL ' '\n");
 			
 			counter = 0;
-			for (NPC npc : paragraph.getEnemies()) {
+			for (NPCParams npcParams : paragraph.getEnemies()) {
+				NPC npc = npcParams.getNpc();
 				buffer.append(getID(VAR_CURRENT_ENEMY_TYPE));
 				buffer.append("=0\nif ");
 				buffer.append(getID(VAR_BATTLE_MODE));
@@ -1838,7 +1843,8 @@ public class QSPBookDecrator implements BookDecorator {
 						buffer.append(getID(VAR_DICE));
 						buffer.append("&if ");
 						int counter=0;
-						for (@SuppressWarnings("unused") NPC npc : paragraph.getEnemies()) {
+						for (@SuppressWarnings("unused") NPCParams npcParams : paragraph.getEnemies()) {
+							NPC npc = npcParams.getNpc();
 							if (counter>0) {
 								buffer.append(" or ");
 							}
@@ -1899,7 +1905,8 @@ public class QSPBookDecrator implements BookDecorator {
 			if (paragraph.getBattle() != null) {
 				//battle actions
 				int counter = 0;
-				for (@SuppressWarnings("unused") NPC npc : paragraph.getEnemies()) {
+				for (@SuppressWarnings("unused") NPCParams npcParams : paragraph.getEnemies()) {
+					NPC npc = npcParams.getNpc();
 					String prefix = new StringBuilder(VAR_ENEMY_PREFIX).append(counter).append(VAR_PARAMETER_PREFIX).toString();
 					if (paragraph.getBattle().isAttackDefense()) {
 						//calculate defense
@@ -2070,7 +2077,8 @@ public class QSPBookDecrator implements BookDecorator {
 								buffer.append(getID(VAR_DICE));
 								buffer.append("&if ");
 								int counter=0;
-								for (@SuppressWarnings("unused") NPC npc : paragraph.getEnemies()) {
+								for (@SuppressWarnings("unused") NPCParams npcParams : paragraph.getEnemies()) {
+									NPC npc = npcParams.getNpc();
 									if (counter>0) {
 										buffer.append(" or ");
 									}
