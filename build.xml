@@ -8,7 +8,7 @@
     <property name="build" value="war"/>
     <property name="ready" value="build"/>
     <property file="build.properties"/>
-    <property name="lib" value="war\WEB-INF\lib\"/>
+    <property name="lib" value="war/WEB-INF/lib/"/>
 
 	<target name="all" depends="init,compile,compileTests,applet,GWTCompile,EditorRu,EditorEn,PlayerRu,PlayerEn,IURQRu,IURQAll,IPhoneRu">
     </target>
@@ -20,11 +20,11 @@
 	  <path id="gwt.class.path">
 		   <pathelement location="${src}"/>
 		   <fileset file="${gwt.compiler}/gwt-dev.jar"/>
-		   <fileset dir="war\WEB-INF\lib\" includes="*.jar"/>
+		   <fileset dir="war/WEB-INF/lib/" includes="*.jar"/>
 	  </path>
 	
 	  <path id="unit.class.path">
-		   <pathelement location="war\WEB-INF\classes"/>
+		   <pathelement location="war/WEB-INF/classes"/>
 	  		<path refid="gwt.class.path"/>
 	  </path>
 	
@@ -34,9 +34,9 @@
 	  </path>
 	
     <target name="compile" description="Compile the packages (Default)">
-        <mkdir dir="${build}\WEB-INF\classes"/>
+        <mkdir dir="${build}/WEB-INF/classes"/>
         <!-- Compile the java code from ${src} into ${build} -->
-        <javac srcdir="${src}" destdir="war\WEB-INF\classes"
+        <javac srcdir="${src}" destdir="war/WEB-INF/classes"
         	source="1.5"
         	target="1.5"
 	  		classpathref="gwt.class.path"
@@ -59,58 +59,58 @@
     <target name="ebook" description="Build e-book" depends="compileTests ">
 		 <junit printsummary="yes" haltonfailure="yes">
 		    <classpath refid="test.class.path"/>
-		    <test name="com.iambookmaster.qsp.MOBIExportTest" outfile="ebooks\result">
+		    <test name="com.iambookmaster.qsp.MOBIExportTest" outfile="ebooks/result">
 		      <formatter type="plain"/>
 		    </test>
 		 </junit>
-    	<unzip dest="ebooks" src="ebooks\output.zip"/>
-    	<exec executable="ebooks\kindlegen" dir="ebooks">
+    	<unzip dest="ebooks" src="ebooks/output.zip"/>
+    	<exec executable="ebooks/kindlegen" dir="ebooks">
     		<arg line="output.opf"/>
     	</exec>
     </target>
 	
     <target name="qsp" description="Build module for AeroQSP">
-    	<delete file="qsp\run\module.zip" failonerror="false"/>
-    	<delete file="qsp\src\module.gam" failonerror="false"/>
-    	<exec executable="qsp\txt2gam.exe" dir="qsp">
-    		<arg line="module.qsp src\module.gam"/>
+    	<delete file="qsp/run/module.zip" failonerror="false"/>
+    	<delete file="qsp/src/module.gam" failonerror="false"/>
+    	<exec executable="qsp/txt2gam.exe" dir="qsp">
+    		<arg line="module.qsp src/module.gam"/>
     	</exec>
-    	<zip destfile="qsp\run\module.zip">
-    		<fileset dir="qsp\src" includes="*/**"/>
+    	<zip destfile="qsp/run/module.zip">
+    		<fileset dir="qsp/src" includes="*/**"/>
     	</zip>
     </target>
 	
     <target name="applet" description="Compile File Exchange applet">
-    	<delete file="war\fileExchnage7.jar" failonerror="false"/>
-        <delete dir="${ready}\applet\classes" failonerror="false"/>
-        <mkdir dir="${ready}\applet\classes"/>
-        <javac srcdir="${src}" destdir="${ready}\applet\classes"
+    	<delete file="war/fileExchnage7.jar" failonerror="false"/>
+        <delete dir="${ready}/applet/classes" failonerror="false"/>
+        <mkdir dir="${ready}/applet/classes"/>
+        <javac srcdir="${src}" destdir="${ready}/applet/classes"
         	source="1.2"
         	target="1.1"
-        	classpath=".\"
+        	classpath="./"
         	debug="false">
-        	<include name="com\iambookmaster\server\applets\FileExchange.java"/>
-        	<include name="com\iambookmaster\client\common\Base64Coder.java"/>
+        	<include name="com/iambookmaster/server/applets/FileExchange.java"/>
+        	<include name="com/iambookmaster/client/common/Base64Coder.java"/>
         </javac>
-    	<jar destfile="war\fileExchnage7.jar">
-    		<fileset dir="${ready}\applet\classes\">
+    	<jar destfile="war/fileExchnage7.jar">
+    		<fileset dir="${ready}/applet/classes/">
     		</fileset>
     	</jar>
-    	<exec executable="jarsigner" dir="war\">
+    	<exec executable="jarsigner" dir="war/">
     		<arg line="-keystore ${basedir}/content/keystore -storepass iambookmaster fileExchnage7.jar iambookmaster"/>
     	</exec>
     </target>
 	
 	<target name="GWTCompile" depends="compile" description="Compile universal Editor">
         <property name="locale" value=""/>
-       	<delete dir="${build}\Player"/>
-       	<delete dir="${build}\iambookmaster"/>
+       	<delete dir="${build}/Player"/>
+       	<delete dir="${build}/iambookmaster"/>
     	<antcall target="zGWTCompile"/>
 	</target>
 	
 	
     <target name="rollback" description="Rollback GAE">
-    	<exec dir="./" executable="${appengine.sdk}\bin\appcfg.cmd" >
+    	<exec dir="./" executable="${appengine.sdk}/bin/appcfg.cmd" >
     		<arg value="rollback"/>
     		<arg value="war"/>
     	</exec>
@@ -169,34 +169,34 @@
     </target>
 	
     <target name="zEditorBuild">
-    	<delete dir="${ready}\editor_${locale}" failonerror="false"/>
-    	<delete file="${ready}\editor_${locale}.zip" failonerror="false"/>
-        <mkdir dir="${ready}\editor_${locale}"/>
-    	<copydir dest="${ready}\editor_${locale}" src="war"/>
-		<copy todir="${ready}\editor_${locale}" overwrite="true">
-			<fileset dir="content\editor\${locale}" includes="*/**"/>
+    	<delete dir="${ready}/editor_${locale}" failonerror="false"/>
+    	<delete file="${ready}/editor_${locale}.zip" failonerror="false"/>
+        <mkdir dir="${ready}/editor_${locale}"/>
+    	<copydir dest="${ready}/editor_${locale}" src="war"/>
+		<copy todir="${ready}/editor_${locale}" overwrite="true">
+			<fileset dir="content/editor/${locale}" includes="*/**"/>
 		</copy>
     	<delete>
-    		<fileset dir="${ready}\editor_${locale}" includes="*.jsp"/>
-    		<fileset dir="${ready}\editor_${locale}" includes="book.*"/>
+    		<fileset dir="${ready}/editor_${locale}" includes="*.jsp"/>
+    		<fileset dir="${ready}/editor_${locale}" includes="book.*"/>
     	</delete>
-    	<delete dir="${ready}\editor_${locale}\en"/>
-    	<delete dir="${ready}\editor_${locale}\ru"/>
-    	<delete dir="${ready}\editor_${locale}\WEB-INF"/>
-       	<delete dir="${ready}\editor_${locale}\Player"/>
-    	<copydir src="war\${locale}" dest="${ready}\editor_${locale}\${locale}"/>
-    	<zip destfile="${ready}\editor_${locale}.zip">
-    		<fileset dir="${ready}\editor_${locale}" includes="*/**"/>
+    	<delete dir="${ready}/editor_${locale}/en"/>
+    	<delete dir="${ready}/editor_${locale}/ru"/>
+    	<delete dir="${ready}/editor_${locale}/WEB-INF"/>
+       	<delete dir="${ready}/editor_${locale}/Player"/>
+    	<copydir src="war/${locale}" dest="${ready}/editor_${locale}/${locale}"/>
+    	<zip destfile="${ready}/editor_${locale}.zip">
+    		<fileset dir="${ready}/editor_${locale}" includes="*/**"/>
     	</zip>
     </target>
 
     <target name="zPlayerBuild">
-    	<delete dir="${ready}\player_${locale}" failonerror="false"/>
-    	<delete file="${ready}\player_${locale}.zip" failonerror="false"/>
-        <mkdir dir="${ready}\player_${locale}"/>
-    	<copydir dest="${ready}\player_${locale}" src="war"/>
-		<copy todir="${ready}\player_${locale}" overwrite="true">
-			<fileset dir="content\player\${locale}" includes="*/**"/>
+    	<delete dir="${ready}/player_${locale}" failonerror="false"/>
+    	<delete file="${ready}/player_${locale}.zip" failonerror="false"/>
+        <mkdir dir="${ready}/player_${locale}"/>
+    	<copydir dest="${ready}/player_${locale}" src="war"/>
+		<copy todir="${ready}/player_${locale}" overwrite="true">
+			<fileset dir="content/player/${locale}" includes="*/**"/>
 		</copy>
     	<delete>
     		<fileset dir="${ready}/player_${locale}" includes="**.jsp"/>
@@ -204,14 +204,14 @@
     		<fileset dir="${ready}/player_${locale}" includes="*.jar"/>
     		<fileset dir="${ready}/player_${locale}" includes="*.js" excludes="book.js"/>
     	</delete>
-    	<delete dir="${ready}\player_${locale}\en"/>
-    	<delete dir="${ready}\player_${locale}\ru"/>
-    	<delete dir="${ready}\player_${locale}\WEB-INF"/>
-    	<delete dir="${ready}\player_${locale}\iambookmaster"/>
-       	<delete dir="${ready}\player_${locale}\images"/>
-    	<copydir src="war\${locale}" dest="${ready}\player_${locale}\${locale}"/>
-    	<zip destfile="${ready}\player_${locale}.zip">
-    		<fileset dir="${ready}\player_${locale}" includes="*/**"/>
+    	<delete dir="${ready}/player_${locale}/en"/>
+    	<delete dir="${ready}/player_${locale}/ru"/>
+    	<delete dir="${ready}/player_${locale}/WEB-INF"/>
+    	<delete dir="${ready}/player_${locale}/iambookmaster"/>
+       	<delete dir="${ready}/player_${locale}/images"/>
+    	<copydir src="war/${locale}" dest="${ready}/player_${locale}/${locale}"/>
+    	<zip destfile="${ready}/player_${locale}.zip">
+    		<fileset dir="${ready}/player_${locale}" includes="*/**"/>
     	</zip>
     </target>
 
@@ -237,7 +237,7 @@
     	<delete failonerror="false">
     		<fileset  dir="${build}/Iphone" includes="*"/>
     	</delete>
-		<java classpath="${lib}/gwt-html5-database.jar:${gwt.compiler}\gwt-dev.jar:${gwt.compiler}\gwt-user.jar:${src}" classname="com.google.gwt.dev.Compiler" taskname="gwt-compile" failonerror="true" fork="true"  >
+		<java classpath="${lib}/gwt-html5-database.jar:${gwt.compiler}/gwt-dev.jar:${gwt.compiler}/gwt-user.jar:${src}:${lib}/gwt-dnd-3.3.1.jar:${src}:${gwtlib}/validation-api-1.0.0.GA.jar:${gwtlib}/validation-api-1.0.0.GA-sources.jar" classname="com.google.gwt.dev.Compiler" taskname="gwt-compile" failonerror="true" fork="true"  >
 		    <jvmarg value="-Xmx1G" />
 		    <jvmarg value="-Xss4096k"/>
 			<jvmarg value="-Xms64M"/>
@@ -246,26 +246,27 @@
 	</target>
 		
     <target name="zIURQBuild">
-    	<delete dir="${ready}\iphone_${locale}" failonerror="false"/>
-    	<delete file="${ready}\iphone_${locale}.zip" failonerror="false"/>
-        <mkdir dir="${ready}\iphone_${locale}"/>
-		<copy todir="${ready}\iphone_${locale}" overwrite="true">
-			<fileset dir="content\iphone\old book" includes="**"/>
+    	<delete dir="${ready}/iphone_${locale}" failonerror="false"/>
+    	<delete file="${ready}/iphone_${locale}.zip" failonerror="false"/>
+        <mkdir dir="${ready}/iphone_${locale}"/>
+        <mkdir dir="war/Iphone"/>
+		<copy todir="${ready}/iphone_${locale}" overwrite="true">
+			<fileset dir="content/iphone/old book" includes="**"/>
 		</copy>
-		<copy todir="${ready}\iphone_${locale}" overwrite="true">
-			<fileset dir="content\iphone\global" includes="**"/>
+		<copy todir="${ready}/iphone_${locale}" overwrite="true">
+			<fileset dir="content/iphone/global" includes="**"/>
 		</copy>
-		<copy todir="${ready}\iphone_${locale}" overwrite="true">
-			<fileset dir="content\iurq\${locale}" includes="**" excludes="*.sav"/>
+		<copy todir="${ready}/iphone_${locale}" overwrite="true">
+			<fileset dir="content/iurq/${locale}" includes="**" excludes="*.sav"/>
 		</copy>
-    	<zip destfile="${ready}\iphone_${locale}.zip">
-    		<fileset dir="${ready}\iphone_${locale}" includes="**"/>
+    	<zip destfile="${ready}/iphone_${locale}.zip">
+    		<fileset dir="${ready}/iphone_${locale}" includes="**"/>
     	</zip>
-		<copy todir="${ready}\iphone_${locale}" overwrite="true">
+		<copy todir="${ready}/iphone_${locale}" overwrite="true">
 			<fileset dir="war/Iphone" includes="*/**"/>
 		</copy>
-    	<zip destfile="${ready}\iphone_${locale}.zip">
-    		<fileset dir="${ready}\iphone_${locale}" includes="**"/>
+    	<zip destfile="${ready}/iphone_${locale}.zip">
+    		<fileset dir="${ready}/iphone_${locale}" includes="**"/>
     	</zip>
     </target>
 
@@ -274,7 +275,7 @@
     	<delete failonerror="false">
     		<fileset  dir="${build}/Iphone" includes="*"/>
     	</delete>
-		<java classpath="${lib}/gwt-html5-database.jar:${gwt.compiler}\gwt-dev.jar:${gwt.compiler}\gwt-user.jar:${src}" classname="com.google.gwt.dev.Compiler" taskname="gwt-compile" failonerror="true" fork="true"  >
+		<java classpath="${lib}/gwt-html5-database.jar:${gwt.compiler}/gwt-dev.jar:${gwt.compiler}/gwt-user.jar:${src}:${lib}/gwt-dnd-3.3.1.jar:${src}:${gwtlib}/validation-api-1.0.0.GA.jar:${gwtlib}/validation-api-1.0.0.GA-sources.jar" classname="com.google.gwt.dev.Compiler" taskname="gwt-compile" failonerror="true" fork="true"  >
 		    <jvmarg value="-Xmx1G" />
 		    <jvmarg value="-Xss4096k"/>
 			<jvmarg value="-Xms64M"/>
@@ -284,24 +285,25 @@
 		
 
     <target name="zIPhoneBuild">
-    	<delete dir="${ready}\iphone_${locale}" failonerror="false"/>
-    	<delete file="${ready}\iphone_${locale}.zip" failonerror="false"/>
-        <mkdir dir="${ready}\iphone_${locale}"/>
-		<copy todir="${ready}\iphone_${locale}" overwrite="true">
-			<fileset dir="content\iphone\game" includes="**"/>
+    	<delete dir="${ready}/iphone_${locale}" failonerror="false"/>
+    	<delete file="${ready}/iphone_${locale}.zip" failonerror="false"/>
+        <mkdir dir="${ready}/iphone_${locale}"/>
+        <mkdir dir="war/Iphone"/>
+		<copy todir="${ready}/iphone_${locale}" overwrite="true">
+			<fileset dir="content/iphone/game" includes="**"/>
 		</copy>
-		<copy todir="${ready}\iphone_${locale}" overwrite="true">
-			<fileset dir="content\iphone\old book" includes="**"/>
+		<copy todir="${ready}/iphone_${locale}" overwrite="true">
+			<fileset dir="content/iphone/old book" includes="**"/>
 		</copy>
-		<copy todir="${ready}\iphone_${locale}" overwrite="true">
-			<fileset dir="content\iphone\global" includes="**"/>
+		<copy todir="${ready}/iphone_${locale}" overwrite="true">
+			<fileset dir="content/iphone/global" includes="**"/>
 		</copy>
-		<copy todir="${ready}\iphone_${locale}" overwrite="true">
-			<fileset dir="content\iphone\${locale}" includes="**"/>
-			<fileset dir="war/iphone" includes="*/**"/>
+		<copy todir="${ready}/iphone_${locale}" overwrite="true">
+			<fileset dir="content/iphone/${locale}" includes="**"/>
+			<fileset dir="war/Iphone" includes="*/**"/>
 		</copy>
-    	<zip destfile="${ready}\iphone_${locale}.zip">
-    		<fileset dir="${ready}\iphone_${locale}" includes="**"/>
+    	<zip destfile="${ready}/iphone_${locale}.zip">
+    		<fileset dir="${ready}/iphone_${locale}" includes="**"/>
     	</zip>
     </target>
 
